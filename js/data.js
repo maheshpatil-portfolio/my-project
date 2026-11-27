@@ -216,7 +216,8 @@ const CASE_STUDIES = [
     slug: "suryana-renewables",
     title: "Suryana Renewables",
     concept: true,
-    draft: true,
+    draft: false,
+    inProgress: true,
     summary: "A presentation and infographic system for a solar company's annual results: master template, investor deck, data visuals and a data film.",
     categories: ["graphic", "motion"],
     thumb: "",
@@ -239,6 +240,16 @@ const CASE_STUDIES = [
       { heading: "The insight", text: [
         "A slide should say one thing, and the title should say it. Executives read titles, not bullets.",
       ] },
+      {
+        heading: "Coming next",
+        text: ["This case study is being built in public. Next up:"],
+        list: [
+          "16-layout PowerPoint master template, chart style sheet and icon set",
+          "15-slide FY2026 investor deck",
+          "Before/after makeover of three slides",
+          "Six infographics, annual report spreads and a 40-second data film",
+        ],
+      },
     ],
   },
   {
