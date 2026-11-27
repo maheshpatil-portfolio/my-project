@@ -199,6 +199,122 @@ const CASE_STUDIES = [
       },
     ],
   },
+  {
+    slug: "suryana-renewables",
+    title: "Suryana Renewables",
+    concept: true,
+    draft: true,
+    summary: "A presentation and infographic system for a solar company's annual results: master template, investor deck, data visuals and a data film.",
+    categories: ["graphic", "motion"],
+    thumb: "",
+    colors: ["#0F1B2D", "#FF8A1F"],
+    preview: "",
+    role: "Presentation design, data visualisation, layout, motion",
+    year: "2026",
+    tools: ["PowerPoint", "Illustrator", "InDesign", "After Effects"],
+    deliverables: ["16-layout PowerPoint template", "15-slide investor deck", "Before/after makeover", "6 infographics", "Annual report spreads", "40s data film"],
+    outcome: "In progress — a 16-layout template any employee can use, and a 15-slide results story that reads from the titles alone.",
+    decisions: [
+      { title: "Action titles", text: "Every slide title states the takeaway, so leaders who only skim the titles still get the whole story." },
+      { title: "One highlight colour", text: "Everything is grey except the one number that matters, marked in Sunrise orange." },
+      { title: "Native, editable charts", text: "Charts are built with PowerPoint's own chart tool and styled to the system, so teams can update the data." },
+    ],
+    sections: [
+      { heading: "The brief", text: [
+        "Suryana's decks were dense, inconsistent and hard to follow, and every team built its own. The task: one presentation and data-visual system that makes the FY2026 results clear in minutes and that anyone can reuse.",
+      ] },
+      { heading: "The insight", text: [
+        "A slide should say one thing, and the title should say it. Executives read titles, not bullets.",
+      ] },
+    ],
+  },
+  {
+    slug: "thoda",
+    title: "Thoda",
+    concept: true,
+    draft: true,
+    summary: "Launch kit for a savings app that rounds up UPI payments: brand, app screens and a 45-second animated explainer.",
+    categories: ["motion", "graphic"],
+    thumb: "",
+    colors: ["#13132B", "#1ED3A4"],
+    preview: "",
+    role: "Brand, UI design, character design, 2D animation",
+    year: "2026",
+    tools: ["Illustrator", "Figma", "After Effects", "Premiere Pro"],
+    deliverables: ["Logo & app icon", "Character \"Sikka\"", "8 app screens", "45s explainer", "App-store screenshots", "Animated social posts"],
+    outcome: "In progress — a complete launch kit: brand, 8 app screens and a 45-second explainer.",
+    decisions: [
+      { title: "A character for money", text: "Sikka, a friendly coin, makes saving feel playful instead of serious or scary." },
+      { title: "One ordinary day", text: "The explainer follows one person's day of small payments, so the product explains itself through a story." },
+      { title: "Bouncy but quick", text: "One set of motion rules for the app, the film and social, so everything feels like the same brand." },
+    ],
+    sections: [
+      { heading: "The brief", text: [
+        "Young Indian earners pay for everything by UPI and want to save, but never have enough left at month-end. Thoda rounds up each payment and saves the spare change automatically.",
+      ] },
+      { heading: "The insight", text: [
+        "Nobody misses ₹3. Saving fails when it feels like a sacrifice; Thoda makes it invisible — the change from a chai.",
+      ] },
+    ],
+  },
+  {
+    slug: "kiro-one",
+    title: "Kiro One",
+    concept: true,
+    draft: true,
+    summary: "Launch film for an electric scooter: a 30-second hero film, kinetic-type feature film, colour grade and social cutdowns.",
+    categories: ["video", "motion"],
+    thumb: "",
+    colors: ["#0B0F14", "#FF8A00"],
+    preview: "",
+    role: "Editing, colour grading, motion graphics, title design",
+    year: "2026",
+    tools: ["Premiere Pro", "DaVinci Resolve", "After Effects", "Photoshop"],
+    deliverables: ["30s launch film", "20s kinetic-type film", "Colour grade (before/after)", "15s & 6s cutdowns", "Teasers", "Thumbnail & end card"],
+    outcome: "In progress — a complete launch package: hero film, feature film and 6 social formats from one grade and one type system.",
+    decisions: [
+      { title: "Chaos to control", text: "Fast, off-beat cuts in the traffic, then smooth on-beat cuts once the rider is on the scooter — the edit tells the story." },
+      { title: "Teal city, orange hero", text: "A muted teal grade with only the Mango Orange scooter saturated, so the eye always finds the product." },
+      { title: "No voice-over", text: "Text and sound design carry the film, so every cut also works with the sound off." },
+    ],
+    sections: [
+      { heading: "The brief", text: [
+        "Launch a light, smart electric scooter for Indian city commuters who are tired of traffic, fuel bills and parking battles.",
+      ] },
+      { heading: "The insight", text: [
+        "In Indian cities, the commute is the part of the day you don't control. Kiro One gives it back: \"Own the city.\"",
+      ] },
+    ],
+  },
+  {
+    slug: "kesar-lane",
+    title: "Kesar Lane",
+    concept: true,
+    draft: true,
+    summary: "A Diwali gifting campaign for a home-fragrance brand: Instagram grid, gift-guide carousel, stories, three reels and ad variants.",
+    categories: ["graphic", "video"],
+    thumb: "",
+    colors: ["#2A1430", "#E8A33D"],
+    preview: "",
+    role: "Campaign concept, social design, short-form video, AI-assisted imagery",
+    year: "2026",
+    tools: ["Photoshop", "Illustrator", "Premiere Pro", "Midjourney", "Firefly"],
+    deliverables: ["Key visual", "9-post grid", "8-slide carousel", "6 stories", "3 reels", "9 ad variants", "WhatsApp & email creatives"],
+    outcome: "In progress — a 4-week Diwali campaign: 9-post grid, carousel, 6 stories, 3 reels and 9 ad variants from one key visual.",
+    decisions: [
+      { title: "Memories, not sales", text: "Each post links a scent to a Diwali memory, instead of shouting discounts." },
+      { title: "A calm, dark grid", text: "Deep plum and candlelight stand out in a feed full of bright, crowded Diwali posts." },
+      { title: "Sell where India buys", text: "WhatsApp creatives alongside Instagram, because that is how small D2C brands actually sell." },
+    ],
+    sections: [
+      { heading: "The brief", text: [
+        "Help a small D2C home-fragrance brand stand out during Diwali gifting season and drive orders before the shipping cut-off.",
+      ] },
+      { heading: "The insight", text: [
+        "Diwali is the one time of year your home is supposed to smell like a memory. The campaign asks: \"What does Diwali smell like to you?\"",
+      ] },
+    ],
+  },
 ];
 
 /* --------------------------------------------------------------------------

@@ -145,7 +145,8 @@
     $("#work-title").textContent = "More work";
     $("#cs-grid").innerHTML = studies.map((c) => `
       <a class="cs-card" href="project.html?p=${encodeURIComponent(c.slug)}${preview ? "&preview" : ""}">
-        <div class="cs-card-img">${c.thumb ? `<img src="${escapeHtml(c.thumb)}" alt="${escapeHtml(c.title)}" loading="lazy">` : ""}
+        <div class="cs-card-img">${c.thumb ? `<img src="${escapeHtml(c.thumb)}" alt="${escapeHtml(c.title)}" loading="lazy">`
+          : `<div class="cs-placeholder" style="background:linear-gradient(135deg,${escapeHtml((c.colors || [])[0] || "#1b1b28")},${escapeHtml((c.colors || [])[1] || "#7b5cff")})"><span>${escapeHtml(c.title)}</span></div>`}
           ${c.preview ? `<video class="cs-preview" src="${escapeHtml(c.preview)}" muted loop playsinline preload="none" aria-hidden="true"></video>` : ""}
           <div class="cs-card-badges">
             ${c.concept ? `<span class="badge concept">Concept project</span>` : ""}
