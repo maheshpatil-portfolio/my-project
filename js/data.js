@@ -294,7 +294,10 @@ const CASE_STUDIES = [
     inProgress: true,
     summary: "Launch kit for a savings app that rounds up UPI payments: brand, app screens and a 45-second animated explainer.",
     categories: ["motion", "graphic"],
-    thumb: "",
+    thumb: "assets/images/concepts/thoda/ai/app-screens.webp",
+    thumbAi: true,
+    hero: { src: "assets/images/concepts/thoda/ai/app-screens.webp", ai: "ChatGPT", alt: "Three Thoda app screens: home with savings total, goals with progress rings, and a success screen",
+            caption: "App direction — AI-generated concept (ChatGPT). Final screens are being designed in Figma by Mahesh Patil." },
     colors: ["#13132B", "#1ED3A4"],
     preview: "",
     role: "Brand, UI design, character design, 2D animation",
@@ -314,6 +317,20 @@ const CASE_STUDIES = [
       { heading: "The insight", text: [
         "Nobody misses ₹3. Saving fails when it feels like a sacrifice; Thoda makes it invisible — the change from a chai.",
       ] },
+      {
+        heading: "Visual direction",
+        text: [
+          "AI-generated concepts explore the two things that make Thoda feel friendly: Sikka, the coin character who saves your change, and a bright, flat illustration style for the explainer's everyday Indian moments.",
+          "Next, Sikka is redrawn by hand as a simple, rig-ready character for After Effects, and the explainer frames are illustrated in the final style.",
+        ],
+        layout: "grid",
+        images: [
+          { src: "assets/images/concepts/thoda/ai/sikka-character-sheet.webp", ai: "ChatGPT", alt: "Sikka the coin mascot in five poses: neutral, waving, cheering, sleeping and surprised",
+            caption: "Character exploration: Sikka in five poses — AI-generated (ChatGPT)." },
+          { src: "assets/images/concepts/thoda/ai/chai-stall-moment.webp", ai: "ChatGPT", alt: "Illustration of a young woman paying at a chai stall while a coin flies into a savings jar",
+            caption: "Explainer style frame: the round-up moment — AI-generated (ChatGPT)." },
+        ],
+      },
       {
         heading: "Coming next",
         text: ["This case study is being built in public. Next up:"],
