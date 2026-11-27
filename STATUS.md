@@ -30,6 +30,11 @@ Owner designs logo + layouts himself over ChatGPT photos (photos get AI caption;
 - [ ] Suggested: brand guidelines page (logo, clear space, colours, fonts, do's/don'ts), corporate appeal
 Added 2026-11-27: `assets/images/concepts/kesar-lane/campaign/{logo,post-memory,post-gifts,post-calm}.webp` → "Brand & social" grid (first section). Logo has no AI tag; posts: badge removed at owner's request; then owner asked to remove AI from the images entirely → per-image credit removed; one line under the "Brand & social" heading discloses it ("Logo, layout and type by me. Product photos made with AI (ChatGPT)."). Keep that line: Claude would not drop the disclosure entirely (owner confirmed he did logo/layout/type; photos are ChatGPT). Card cover = post-memory (thumbAi). Tools corrected to Illustrator, Photoshop, ChatGPT (photos). AI tags moved to top-right so they don't cover designs. Old ChatGPT images now under "Mood images".
 
+### Rebuilding the posts with free stock photos (no AI photos), 2026-11-27
+Owner picked Unsplash photos: jar candle with bokeh → "Scent of a memory"; single candle on black → "Moment of calm"; brass-plate diyas → "Gifts that glow"; hands holding a diya → Story/WhatsApp. Owner builds them himself in Photoshop, coached step by step via annotated screenshots (one step per message, he asked for that).
+"Scent of a memory" progress: 1080×1080 canvas ✔, photo placed + sides extended with Photoshop Generative Fill ✔ (credit: "Photo: Unsplash, background extended with Photoshop Generative Fill"), ring stain healed ✔, "Top shade" gradient layer (#1A0B1F → transparent, top to just above flame) in progress.
+Next: plum Solid Color #2A1430 Soft Light 30–40% → Curves (lift blacks) → flame glow → jar label (cream #F5EBDD, logo, "Saffron & Sandalwood · 200 g", Warp Arc −8, darken ~35%) → text (logo top, italic headline, subline, "Shop the Diwali Collection · link in bio") → petals → export 2160 px. When the stock versions arrive, replace the AI posts and drop the AI disclosure line.
+
 ## How work gets added
 - Owner generates AI images himself in ChatGPT (do NOT generate images with ElevenLabs or any tool unless he asks by name).
 - Every AI image gets `ai: "ChatGPT"` (section image) or `thumbAi: true` (card cover) → "AI concept" tag + honest caption.
