@@ -5,7 +5,7 @@
 
 const SITE = {
   name: "Mahesh Patil",
-  role: "Lead Graphic Designer · Brand, Motion & Video · 10+ years",
+  role: "Graphic Designer & Motion Graphics Editor · 10+ yrs",
   tagline: "I build brand systems, campaigns, presentations and motion that stay consistent from the first sketch to the final frame.",
   location: "Hyderabad, India",
   email: "maheshpatil1@hotmail.com",
