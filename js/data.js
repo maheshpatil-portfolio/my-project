@@ -9,22 +9,24 @@ const SITE = {
   tagline: "I design visuals that move — brand identities, edits and motion graphics that tell stories.",
   location: "Your City, Country",
   email: "hello@example.com",
-  availability: "Available for freelance projects",
+  availability: "Open to full-time roles",
+
+  // Your résumé/CV: put the PDF in assets/ (e.g. "assets/Mahesh-Patil-Resume.pdf").
+  // Leave empty ("") to hide the "Download résumé" button.
+  resume: "",
 
   // Your showreel: a YouTube or Vimeo link, or a file like "assets/videos/showreel.mp4".
   // Leave empty ("") to hide the "Watch showreel" button.
   showreel: "",
 
   about: [
-    "Hi! I'm a multidisciplinary designer working across graphic design, video editing and motion graphics.",
-    "I help brands, creators and agencies turn ideas into visuals people remember — from logos and social campaigns to YouTube edits, ads and animated explainers.",
+    "I'm Mahesh Patil, a graphic designer, video editor and motion designer. I help brands, creators and businesses turn ideas into visuals people remember — from logos and social media creatives to YouTube edits, ads and animated explainers.",
+    "I care about clean design, strong storytelling and pacing that keeps viewers watching. Whether it's a brand identity or a 15-second reel, I make sure every frame has a purpose.",
+    "I'm now looking for a full-time role where I can grow with a creative team and own visual content from concept to final export.",
   ],
 
-  stats: [
-    { value: "5+", label: "Years experience" },
-    { value: "120+", label: "Projects delivered" },
-    { value: "40+", label: "Happy clients" },
-  ],
+  // Optional highlights, e.g. { value: "3+", label: "Years experience" }. Leave empty [] to hide.
+  stats: [],
 
   tools: [
     "Photoshop", "Illustrator", "InDesign", "After Effects",

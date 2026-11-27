@@ -119,6 +119,13 @@
     reelBtn.addEventListener("click", () => openLightbox({ media: SITE.showreel, label: "showreel", title: "Showreel", desc: SITE.role }));
   }
 
+  /* ---------- Résumé ---------- */
+  if (SITE.resume) {
+    const resumeBtn = $("#resume-btn");
+    resumeBtn.href = SITE.resume;
+    resumeBtn.hidden = false;
+  }
+
   /* ---------- Services, about, tools, contact ---------- */
   $("#services-list").innerHTML = SITE.services.map((s) => `
     <article class="service reveal">
@@ -128,7 +135,8 @@
     </article>`).join("");
 
   $("#about-text").innerHTML = SITE.about.map((t) => `<p>${escapeHtml(t)}</p>`).join("");
-  $("#stats").innerHTML = SITE.stats.map((s) => `<div class="stat"><strong>${escapeHtml(s.value)}</strong><span>${escapeHtml(s.label)}</span></div>`).join("");
+  $("#stats").hidden = !(SITE.stats && SITE.stats.length);
+  $("#stats").innerHTML = (SITE.stats || []).map((s) => `<div class="stat"><strong>${escapeHtml(s.value)}</strong><span>${escapeHtml(s.label)}</span></div>`).join("");
   $("#tools").innerHTML = SITE.tools.map((t) => `<li>${escapeHtml(t)}</li>`).join("");
 
   const email = $("#email-link");

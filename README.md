@@ -7,6 +7,7 @@ A fast, dark, modern portfolio site. Plain HTML/CSS/JavaScript — no build step
 | What | Where in `js/data.js` |
 |------|------------------------|
 | Name, role, tagline, email, location | `SITE` at the top |
+| Résumé download button | `SITE.resume` — put your PDF in `assets/` and write its path |
 | Showreel video | `SITE.showreel` — a YouTube/Vimeo link or `assets/videos/showreel.mp4` |
 | About text, stats, tools, services | `SITE.about`, `SITE.stats`, `SITE.tools`, `SITE.services` |
 | Social links (Behance, Instagram…) | `SITE.socials` |
