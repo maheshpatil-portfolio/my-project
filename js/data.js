@@ -4,7 +4,7 @@
    ========================================================================== */
 
 const SITE = {
-  name: "Your Name",
+  name: "Mahesh Patil",
   role: "Graphic Designer · Video Editor · Motion Designer",
   tagline: "I design visuals that move — brand identities, edits and motion graphics that tell stories.",
   location: "Your City, Country",
