@@ -164,7 +164,7 @@ h3 { font-size: 1.25rem; }
 }
 .badge.concept { background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; }
 .badge.draft { background: #ffd54f; color: #2b2100; }
-.badge.wip { background: rgba(0, 212, 255, .15); color: #7fe8ff; border: 1px solid rgba(0, 212, 255, .45); }
+.badge.wip { background: rgba(10, 10, 16, .82); color: #7fe8ff; border: 1px solid rgba(0, 212, 255, .55); backdrop-filter: blur(6px); }
 .section-note { color: var(--muted); max-width: 420px; }
 
 /* Case study cards (home) */
