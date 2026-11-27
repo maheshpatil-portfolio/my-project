@@ -136,6 +136,30 @@
   lb.addEventListener("click", (e) => { if (e.target === lb) closeLightbox(); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !lb.hidden) closeLightbox(); });
 
+  /* ---------- Case studies ---------- */
+  const preview = new URLSearchParams(location.search).has("preview");
+  const studies = (typeof CASE_STUDIES === "undefined" ? [] : CASE_STUDIES).filter((c) => preview || !c.draft);
+  if (studies.length) {
+    $("#case-studies").hidden = false;
+    $("#nav-cs").hidden = false;
+    $("#work-title").textContent = "More work";
+    $("#cs-grid").innerHTML = studies.map((c) => `
+      <a class="cs-card" href="project.html?p=${encodeURIComponent(c.slug)}${preview ? "&preview" : ""}">
+        <div class="cs-card-img">${c.thumb ? `<img src="${escapeHtml(c.thumb)}" alt="${escapeHtml(c.title)}" loading="lazy">` : ""}
+          <div class="cs-card-badges">
+            ${c.concept ? `<span class="badge concept">Concept project</span>` : ""}
+            ${c.draft ? `<span class="badge draft">Draft</span>` : ""}
+          </div>
+        </div>
+        <div class="cs-card-body">
+          <div>${[].concat(c.categories || []).map((k) => `<span class="tag ${escapeHtml(k)}">${CATEGORY_LABELS[k] || escapeHtml(k)}</span>`).join(" ")}</div>
+          <h3>${escapeHtml(c.title)}</h3>
+          <p>${escapeHtml(c.summary)}</p>
+          <span class="cs-more">Read case study →</span>
+        </div>
+      </a>`).join("");
+  }
+
   /* ---------- Showreel ---------- */
   const reelBtn = $("#showreel-btn");
   if (SITE.showreel) {
@@ -205,5 +229,12 @@
   }, { threshold: 0.15 });
   document.querySelectorAll(".reveal").forEach((el) => io ? io.observe(el) : el.classList.add("visible"));
 
+  if (!PROJECTS.length) {
+    $("#work").hidden = true;
+    document.querySelectorAll('a[href="#work"]').forEach((a) => {
+      if (a.closest(".nav-links")) a.hidden = true;
+      else a.href = $("#case-studies").hidden ? "#about" : "#case-studies";
+    });
+  }
   renderProjects();
 })();

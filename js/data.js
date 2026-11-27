@@ -126,138 +126,67 @@ const SITE = {
   languages: ["English", "Hindi", "Kannada", "Telugu"],
 
   socials: [
-    { label: "Behance", url: "https://www.behance.net/maheshpatil224" },
     // Add more, e.g. { label: "LinkedIn", url: "https://www.linkedin.com/in/your-profile" },
   ],
 };
 
 /* --------------------------------------------------------------------------
-   PROJECTS  (from behance.net/maheshpatil224)
-   category: "graphic" | "video" | "motion"  — or a list, e.g. ["motion", "video"]
-   thumb:    cover image shown on the card (thumbPosition: optional crop, e.g. "left center")
-   gallery:  images shown when the card is opened (top to bottom)
-   videos:   YouTube / Vimeo / Behance (Adobe) embed links shown when opened
-   link:     "View on Behance" link in the viewer
-   colors:   placeholder colors, only used if there is no thumb
+   CASE STUDIES — big projects with their own page (project.html?p=<slug>)
+   concept: true   → shows a "Concept project" badge + a note that the brand is fictional
+   draft:   true   → hidden on the live site; preview with  index.html?preview
+   sections: each has heading, text (string or list of paragraphs), optional
+             list (bullets), images (path or { src, caption }), layout: "grid"
+             for 2 columns, and videos (YouTube / Vimeo links)
    -------------------------------------------------------------------------- */
-const PROJECTS = [
+const CASE_STUDIES = [
   {
-    title: "Coolpad & ACT Fibernet Campaigns",
-    category: "graphic",
-    client: "Coolpad India · ACT Fibernet",
-    tools: ["Photoshop", "Illustrator"],
-    description: "Smartphone launch creatives, Amazon-exclusive sale posts, festival greetings, contest announcements and broadband ads — consistent brand campaigns for digital and social.",
-    thumb: "assets/images/behance/graphic-design-works/cover.webp",
-    gallery: [
-      "assets/images/behance/graphic-design-works/01.webp",
-      "assets/images/behance/graphic-design-works/02.webp",
-      "assets/images/behance/graphic-design-works/03.webp",
-      "assets/images/behance/graphic-design-works/04.webp",
-      "assets/images/behance/graphic-design-works/05.webp",
-      "assets/images/behance/graphic-design-works/06.webp",
-      "assets/images/behance/graphic-design-works/07.webp",
-      "assets/images/behance/graphic-design-works/08.webp",
-      "assets/images/behance/graphic-design-works/09.webp",
-      "assets/images/behance/graphic-design-works/10.webp",
-      "assets/images/behance/graphic-design-works/11.webp",
-      "assets/images/behance/graphic-design-works/12.webp",
-      "assets/images/behance/graphic-design-works/13.webp",
-      "assets/images/behance/graphic-design-works/14.webp",
-      "assets/images/behance/graphic-design-works/15.webp",
+    slug: "chai-theory",
+    title: "Chai Theory",
+    concept: true,
+    draft: true,
+    summary: "A 360° launch for a modern Indian chai brand: identity, packaging, campaign, launch film and motion.",
+    categories: ["graphic", "motion", "video"],
+    thumb: "assets/images/concepts/chai-theory/process/logo-exploration-r1.webp",
+    hero: "",
+    role: "Creative direction, brand identity, packaging, campaign, motion & video",
+    year: "2026",
+    tools: ["Illustrator", "Photoshop", "After Effects", "Premiere Pro", "ChatGPT", "Midjourney"],
+    deliverables: ["Brand identity & guidelines", "Packaging range", "Launch deck", "Social campaign", "20s launch film", "Logo animation"],
+    sections: [
+      {
+        heading: "The brief",
+        text: [
+          "Create a brand for small-batch, whole-spice chai that feels modern and design-led, yet still tastes like home — for urban Indians aged 22–38 who love chai but no longer have time to make it the slow way.",
+          "The goal: one brand system that works across packaging, retail, social, presentation, film and motion.",
+        ],
+      },
+      {
+        heading: "The insight",
+        text: [
+          "Everyone thinks their chai is the right chai. Ginger first or milk first, boil once or twice — every family has its own theory.",
+          "So instead of claiming to be \"the best\", Chai Theory invites people into the debate: every blend is a numbered theory, and the campaign asks \"What's your theory?\"",
+        ],
+      },
+      {
+        heading: "Logo exploration",
+        text: [
+          "Three routes explored with quick vector studies and AI-assisted ideation: the θ cup (theta, the symbol for theory, as a cutting-chai glass), the kulhad, and steam that asks a question.",
+          "Shortlist: the cutting-chai glass inside a serif θ, and the θ bar breaking out of the glass. Final mark in progress.",
+        ],
+        layout: "grid",
+        images: [
+          { src: "assets/images/concepts/chai-theory/process/logo-exploration-r1.webp", caption: "Round 1 — vector studies for three routes" },
+          { src: "assets/images/concepts/chai-theory/process/logo-ai-exploration-chatgpt.webp", caption: "AI-assisted ideation (ChatGPT), used for exploration only" },
+        ],
+      },
     ],
-    link: "https://www.behance.net/gallery/110489837/Graphic-Design-Works",
-    colors: ["#ff7a59", "#ffcf5c"],
-  },
-  {
-    title: "Motion Graphics & Video Editing",
-    category: ["motion", "video"],
-    tools: ["After Effects", "Premiere Pro"],
-    description: "A selection of motion graphics and edited videos created in After Effects and Premiere Pro.",
-    thumb: "assets/images/behance/motion-graphics-video-editing/cover.webp",
-    videos: [
-      "https://www-ccv.adobe.io/v1/player/ccv/GgVs8Y6Yef9/embed?api_key=behance1&bgcolor=%23191919",
-      "https://www-ccv.adobe.io/v1/player/ccv/JQJKZz7V-L4/embed?api_key=behance1&bgcolor=%23191919",
-      "https://www-ccv.adobe.io/v1/player/ccv/2PY9HDHHbba/embed?api_key=behance1&bgcolor=%23191919",
-    ],
-    link: "https://www.behance.net/gallery/110992271/Motion-Graphics-Video-Editing",
-    colors: ["#f857a6", "#ff5858"],
-  },
-  {
-    title: "Future Electric — Brand Identity",
-    category: "graphic",
-    tools: ["Illustrator"],
-    description: "Logo and visual identity for an electric-mobility brand, with an EV infographic and a 'Future of Mobility' key visual.",
-    thumb: "assets/images/behance/future-electric/03.webp",
-    gallery: [
-      "assets/images/behance/future-electric/01.webp",
-      "assets/images/behance/future-electric/02.webp",
-      "assets/images/behance/future-electric/03.webp",
-    ],
-    link: "https://www.behance.net/gallery/160395643/Future-Electric",
-    colors: ["#7b5cff", "#00d4ff"],
-  },
-  {
-    title: "Social Media & Ad Creatives",
-    category: "graphic",
-    tools: ["Photoshop", "Illustrator"],
-    description: "Instagram carousels, product ads and sale posts — scroll-stopping layouts with bold typography.",
-    thumb: "assets/images/behance/graphic-designer-portfolio/cover.webp",
-    gallery: [
-      "assets/images/behance/graphic-designer-portfolio/01.webp",
-    ],
-    link: "https://www.behance.net/gallery/169130177/Graphic-Designer-Portfolio",
-    colors: ["#11998e", "#38ef7d"],
-  },
-  {
-    title: "Logo Design",
-    category: "graphic",
-    tools: ["Illustrator"],
-    description: "Logo marks and brand symbols, from a bold monogram to a mascot-style crest.",
-    thumb: "assets/images/behance/logo-design/cover.webp",
-    gallery: [
-      "assets/images/behance/logo-design/01.webp",
-      "assets/images/behance/logo-design/02.webp",
-      "assets/images/behance/logo-design/03.webp",
-    ],
-    link: "https://www.behance.net/gallery/110581479/Logo-Design",
-    colors: ["#fbd72b", "#f9484a"],
-  },
-  {
-    title: "Never Mind — Typography",
-    category: "graphic",
-    tools: ["Illustrator"],
-    description: "Expressive typographic wordmarks that play with letterforms to show meaning — Mind, On/Off and Space.",
-    thumb: "assets/images/behance/never-mind/cover.webp",
-    gallery: [
-      "assets/images/behance/never-mind/01.webp",
-    ],
-    link: "https://www.behance.net/gallery/166029135/Never-Mind",
-    colors: ["#222", "#e53935"],
-  },
-  {
-    title: "Case Study Layout",
-    category: "graphic",
-    tools: ["InDesign", "Illustrator"],
-    description: "A two-page corporate case study template: challenge, problem, solution process, plan and results.",
-    thumb: "assets/images/behance/case-study-design/cover.webp",
-    gallery: [
-      "assets/images/behance/case-study-design/01.webp",
-      "assets/images/behance/case-study-design/02.webp",
-    ],
-    link: "https://www.behance.net/gallery/162083297/Case-Study-Design",
-    colors: ["#e53935", "#ff8a80"],
-  },
-  {
-    title: "Banner Design",
-    category: "graphic",
-    tools: ["Photoshop"],
-    description: "A web banner for a modern furniture and interior design brand.",
-    thumb: "assets/images/behance/banner-designs/01.webp",
-    thumbPosition: "left center",
-    gallery: [
-      "assets/images/behance/banner-designs/01.webp",
-    ],
-    link: "https://www.behance.net/gallery/162545625/Banner-Designs",
-    colors: ["#1e2a3a", "#b6e33b"],
   },
 ];
+
+/* --------------------------------------------------------------------------
+   MORE WORK — smaller projects shown in the grid (opens in a viewer)
+   category: "graphic" | "video" | "motion"  — or a list, e.g. ["motion", "video"]
+   thumb / thumbPosition, gallery (images), videos (embed links), link, colors
+   Leave the list empty [] to hide the section.
+   -------------------------------------------------------------------------- */
+const PROJECTS = [];

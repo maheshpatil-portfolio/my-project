@@ -11,7 +11,8 @@ A fast, dark, modern portfolio site. Plain HTML/CSS/JavaScript — no build step
 | Showreel video | `SITE.showreel` — a YouTube/Vimeo link or `assets/videos/showreel.mp4` |
 | About text, stats, tools, services | `SITE.about`, `SITE.stats`, `SITE.tools`, `SITE.services` |
 | Social links (Behance, Instagram…) | `SITE.socials` |
-| Your projects | the `PROJECTS` list |
+| Case studies (main work, own page each) | the `CASE_STUDIES` list — `draft: true` hides one until it's ready |
+| Smaller projects grid | the `PROJECTS` list (empty = hidden) |
 
 ### Adding a project
 ```js
@@ -38,6 +39,10 @@ A fast, dark, modern portfolio site. Plain HTML/CSS/JavaScript — no build step
 1. Merge this into the `main` branch.
 2. On GitHub: **Settings → Pages → Source: Deploy from a branch → `main` / root → Save**.
 3. After a minute your site is live at `https://<your-username>.github.io/my-project/`.
+
+## Previewing drafts
+Add `?preview` to the address to see draft case studies, e.g. `https://sharehub6224.github.io/my-project/?preview`.
+Drafts are invisible to everyone else.
 
 ## Preview locally
 Just open `index.html` in a browser.
