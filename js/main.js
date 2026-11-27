@@ -233,7 +233,8 @@
     $("#work").hidden = true;
     document.querySelectorAll('a[href="#work"]').forEach((a) => {
       if (a.closest(".nav-links")) a.hidden = true;
-      else a.href = $("#case-studies").hidden ? "#about" : "#case-studies";
+      else if ($("#case-studies").hidden) a.hidden = true; // no work published yet
+      else a.href = "#case-studies";
     });
   }
   renderProjects();
