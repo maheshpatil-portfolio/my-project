@@ -51,6 +51,7 @@ Owner shared pages from another designer's Behance portfolio as inspiration only
 - After every push: wait for the live site to match (`curl` js/data.js vs local), then check it in Playwright via the proxy.
 
 ## Decisions (newest first)
+- 2026-11-27 — Hybrid structure: Selected Work (3 case studies) + new **More Work by category** (`CATEGORIES` in js/data.js): Presentation *Design*, Social *Media* (Instagram frames), Print *Media*, Retail *Branding*, Logo *Folio*, Motion *Graphics*. Placeholder slots show only on `index.html?preview`; a category stays hidden on the live site until it has real `items`. Owner will fill them with real past work (only work he may share).
 - 2026-11-27 — Tried a v2 closer to the reference (Portfolio cover with diya orb, table of contents, divider, Hello!/Thanks pages); owner preferred the previous version, so v2 was reverted. Keep the bold portfolio-book design ("Hello! I am Mahesh Patil" intro, Selected *Work* cards).
 - 2026-11-27 — Owner asked to design the site "as per the reference" (another designer's Behance portfolio). New look: grey grain paper + dark bands, "Hello! I am Mahesh Patil" intro with gradient name + saffron script "Designer & Motion Editor", bold section titles with script words (Selected *Work*, What I *Do*, Experience *10+ years*, About *me*, Let's work *Together*), rounded shadow cards with faint 01/02/03 numbers. Fonts: Poppins + Mrs Saint Delafield. Accent saffron #e8952f (not the reference's lime).
 - 2026-11-27 — Owner asked for a **corporate, premium, subtle** look. Same editorial layout, new tokens: bg #f7f6f2, navy ink #0f1b2d, muted brass #8f6f3a, quieter rules, Newsreader + Inter Tight, smaller calmer headlines, intro facts on a white panel, soft shadow on case-study images.
@@ -75,6 +76,7 @@ Owner shared pages from another designer's Behance portfolio as inspiration only
 - 2026-11-27 — Old Behance work removed from the site; no NDA project; LinkedIn link added; portfolio link added to his LinkedIn.
 
 ## Next steps
+0. Owner fills **More Work** categories with real work: send images + brand + one line each; add to `CATEGORIES[].items` as WebP in `assets/images/work/` (preview: https://maheshpatil-portfolio.github.io/my-project/index.html?preview#more-work).
 1. Kesar Lane: owner continues the campaign (story, packaging + gift tag, bag + card, brand guidelines). Add each to "Brand & social" as it arrives; when the set is done, an overview image becomes the hero.
 2. Suryana: owner rebuilds the slides by hand in PowerPoint (+ the "before" slide); his versions replace the AI ones, with no AI label. Then owner's own designs (slides, posters, in-store kit, motion videos) replace AI images over time; remove `inProgress` when a project is finished.
 3. Owner to update his CV PDF (still lists UI/UX + Figma) and send it to replace `assets/Mahesh-Patil-Resume.pdf`.

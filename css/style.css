@@ -274,6 +274,31 @@ figcaption { margin-top: .6rem; font-size: .85rem; color: var(--muted); }
 .cs-next a:hover strong { color: var(--accent); }
 .cs-missing { min-height: 60vh; display: grid; align-content: center; justify-items: start; gap: 1rem; }
 
+/* ---------- More work, by category ---------- */
+.cat + .cat { margin-top: clamp(4rem, 9vw, 6.5rem); }
+.cat-head { position: relative; margin-bottom: 2rem; }
+.cat-num { position: absolute; left: -.1em; top: -.35em; font-size: clamp(5rem, 11vw, 8.5rem); font-weight: 800; line-height: 1; color: rgba(0,0,0,.07); letter-spacing: -.04em; pointer-events: none; }
+.cat-title { margin: 0; padding-top: 1.4rem; }
+.cat-title h3 { font-size: clamp(2.2rem, 5.5vw, 4rem); font-weight: 800; letter-spacing: -.035em; line-height: 1; }
+.cat-title .script { font-size: clamp(2.2rem, 5vw, 3.8rem); bottom: -.5em; }
+.cat-note { margin-top: 1.4rem; color: var(--muted); }
+.cat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 1.6rem; }
+.cat-grid.is-ig, .cat-grid.r-print, .cat-grid.r-retail { grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr)); }
+.cat-item figcaption { margin-top: .6rem; font-size: .85rem; color: var(--muted); }
+.cat-item figcaption strong { color: var(--ink); font-weight: 600; }
+.cat-img { position: relative; overflow: hidden; border-radius: 16px; background: #ddd; box-shadow: var(--shadow); }
+.cat-img img { width: 100%; height: 100%; object-fit: cover; }
+.cat-ph { display: grid; place-content: center; gap: .4rem; text-align: center; padding: 1rem; border: 2px dashed #b9b9b4; border-radius: 16px; color: var(--muted); background: rgba(255,255,255,.35); }
+.cat-ph span { font-weight: 700; color: var(--accent-ink); }
+.cat-ph p { font-size: .85rem; max-width: 22ch; margin-inline: auto; }
+/* Instagram post frame */
+.ig-card { background: #fafafa; border-radius: 14px; padding: .7rem .7rem .6rem; box-shadow: var(--shadow); }
+.ig-card .cat-img, .ig-card .cat-ph { border-radius: 4px; box-shadow: none; }
+.ig-head, .ig-foot { display: flex; justify-content: space-between; align-items: center; padding: .1rem .3rem .5rem; color: #333; }
+.ig-foot { padding: .55rem .3rem .1rem; font-size: 1rem; }
+.ig-logo { font-family: var(--script); font-size: 1.7rem; line-height: 1; }
+.ig-icons { font-size: 1rem; letter-spacing: .3em; }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
   .hero-facts, .services, .info-grid { grid-template-columns: repeat(2, 1fr); }

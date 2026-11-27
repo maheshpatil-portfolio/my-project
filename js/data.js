@@ -464,3 +464,79 @@ const CASE_STUDIES = [
    Leave the list empty [] to hide the section.
    -------------------------------------------------------------------------- */
 const PROJECTS = [];
+
+/* --------------------------------------------------------------------------
+   MORE WORK, BY CATEGORY — shown on the home page under "More Work".
+   items: your real work. Each item: { src: "assets/images/work/<file>.webp", brand: "Vivo", title: "In-store standee" }
+          motion items can use { video: "https://youtu.be/…", brand: "…", title: "…" }
+   placeholders: reminders of what to add. They show ONLY on index.html?preview,
+          never on the live site. A category with no items is hidden on the live site.
+   frame: "instagram" shows items inside an Instagram post frame.
+   -------------------------------------------------------------------------- */
+const CATEGORIES = [
+  {
+    id: "presentations", title: "Presentation", script: "Design", ratio: "16 / 9",
+    note: "Corporate decks, infographics and report pages.",
+    items: [],
+    placeholders: [
+      "Corporate deck: cover + 2 inside slides (before/after if possible)",
+      "Infographic set: 3–4 data visuals",
+      "Annual report / brochure spread",
+    ],
+  },
+  {
+    id: "social", title: "Social", script: "Media", ratio: "1 / 1", frame: "instagram",
+    note: "Posts, carousels and stories for brands.",
+    items: [],
+    placeholders: [
+      "Festive post (Diwali / Independence Day)",
+      "Product launch post",
+      "Offer / sale post",
+      "Carousel cover",
+      "Corporate / hiring post",
+      "Story (9:16)",
+    ],
+  },
+  {
+    id: "print", title: "Print", script: "Media", ratio: "3 / 4",
+    note: "Posters, flyers, brochures and standees.",
+    items: [],
+    placeholders: [
+      "A3 poster",
+      "Flyer / leaflet",
+      "Brochure cover + spread",
+      "Roll-up standee",
+    ],
+  },
+  {
+    id: "retail", title: "Retail", script: "Branding", ratio: "4 / 3",
+    note: "In-store branding: danglers, standees, signage and POSM.",
+    items: [],
+    placeholders: [
+      "Vivo / Coolpad in-store branding photo",
+      "Dangler or shelf strip",
+      "Shop signage / fascia",
+      "POSM kit layout",
+    ],
+  },
+  {
+    id: "logos", title: "Logo", script: "Folio", ratio: "1 / 1",
+    note: "Logos and identities, with the idea behind each.",
+    items: [],
+    placeholders: [
+      "Logo 1 (with a one-line idea)",
+      "Logo 2",
+      "Logo 3",
+    ],
+  },
+  {
+    id: "motion", title: "Motion", script: "Graphics", ratio: "16 / 9",
+    note: "Logo animations, kinetic type and social videos.",
+    items: [],
+    placeholders: [
+      "Logo animation (5–10 s, YouTube link)",
+      "Kinetic typography / explainer",
+      "Social reel (9:16)",
+    ],
+  },
+];

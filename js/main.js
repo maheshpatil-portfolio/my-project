@@ -260,6 +260,36 @@
   links.addEventListener("click", (e) => { if (e.target.closest("a")) links.classList.remove("open"); });
   window.addEventListener("scroll", () => nav.classList.toggle("scrolled", window.scrollY > 20), { passive: true });
 
+  /* ---------- More work, by category ---------- */
+  const IG = `<div class="ig-head"><span class="ig-logo">Instagram</span><span class="ig-icons">♡ ⌯</span></div>`;
+  const IG_FOOT = `<div class="ig-foot"><span>♥&nbsp;&nbsp;◯&nbsp;&nbsp;➤</span><span>⌑</span></div>`;
+  const catList = (typeof CATEGORIES === "undefined" ? [] : CATEGORIES)
+    .filter((c) => (c.items || []).length || (preview && (c.placeholders || []).length));
+  if (catList.length) {
+    $("#more-work").hidden = false;
+    $("#nav-more").hidden = false;
+    $("#categories").innerHTML = catList.map((c, ci) => {
+      const ig = c.frame === "instagram";
+      const tile = (inner) => ig ? `<div class="ig-card">${IG}${inner}${IG_FOOT}</div>` : inner;
+      const items = (c.items || []).map((it) => {
+        const media = it.video ? videoHtml(it.video)
+          : `<div class="cat-img" style="aspect-ratio:${escapeHtml(c.ratio || "4 / 3")}"><img src="${escapeHtml(it.src)}" alt="${escapeHtml([it.brand, it.title].filter(Boolean).join(" — "))}" loading="lazy">${it.ai ? `<span class="ai-tag">${escapeHtml(it.tag || "Made with AI")}</span>` : ""}</div>`;
+        return `<figure class="cat-item">${tile(media)}<figcaption><strong>${escapeHtml(it.brand || "")}</strong>${it.brand && it.title ? " · " : ""}${escapeHtml(it.title || "")}</figcaption></figure>`;
+      }).join("");
+      const holders = preview ? (c.placeholders || []).map((t) =>
+        `<figure class="cat-item">${tile(`<div class="cat-ph" style="aspect-ratio:${escapeHtml(c.ratio || "4 / 3")}"><span>+ Add</span><p>${escapeHtml(t)}</p></div>`)}<figcaption>Placeholder (only visible in preview)</figcaption></figure>`).join("") : "";
+      return `
+        <div class="cat" id="cat-${escapeHtml(c.id)}">
+          <div class="cat-head">
+            <span class="cat-num" aria-hidden="true">${String(ci + 1).padStart(2, "0")}</span>
+            <div class="title-block cat-title"><h3>${escapeHtml(c.title)}</h3><span class="script">${escapeHtml(c.script || "")}</span></div>
+            <p class="cat-note">${escapeHtml(c.note || "")}</p>
+          </div>
+          <div class="cat-grid ${ig ? "is-ig" : ""} r-${escapeHtml(c.id)}">${items}${holders}</div>
+        </div>`;
+    }).join("");
+  }
+
   if (!PROJECTS.length) {
     $("#work").hidden = true;
     document.querySelectorAll('a[href="#work"]').forEach((a) => {

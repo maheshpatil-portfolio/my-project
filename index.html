@@ -16,7 +16,7 @@
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">Menu</button>
     <nav class="nav-links">
       <a href="#case-studies" id="nav-cs" hidden>Work</a>
-      <a href="#work">More work</a>
+      <a href="#more-work" id="nav-more" hidden>More work</a>
       <a href="#experience">Experience</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
@@ -70,6 +70,15 @@
         <div class="title-block"><h2>Selected</h2><span class="script">Work</span></div>
         <p class="section-note">Three projects, from brief to final work.</p>
         <div class="cs-list" id="cs-grid"></div>
+      </div>
+    </section>
+
+    <!-- MORE WORK BY CATEGORY (from CATEGORIES in js/data.js; empty categories are hidden, placeholders show only with ?preview) -->
+    <section id="more-work" class="band" hidden>
+      <div class="wrap">
+        <div class="title-block"><h2>More</h2><span class="script">Work</span></div>
+        <p class="section-note">Real work from my roles, by category.</p>
+        <div id="categories"></div>
       </div>
     </section>
 
