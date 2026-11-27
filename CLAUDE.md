@@ -20,6 +20,6 @@ The owner's sessions can run out of context. Any fresh session must be able to c
 - Portfolio research (Nov 2026): recruiters decide in ~5–20 s, so the first screen must show role, years, brands and a CTA; 3–5 deep case studies beat many shallow ones; case studies lead with problem, role, key decisions and outcome; keep media light (hover loops < 2 MB, respect reduced motion).
 - Core goal (Nov 2026, owner): hiring managers judge **design quality and problem-solving**. Every case study shows problem → thinking → better solution visually (before/after pairs, sketches/options, final work). When suggesting next work, prioritise what proves these two skills, and give design-quality feedback on everything the owner sends.
 - Visual-first (Nov 2026, owner's request): let the work speak. One-line brief, short captions (2–4 words), no long paragraphs; images come right after the title.
-- Dark theme; colors are CSS variables in `:root` of `style.css`.
+- Design (Nov 2026, owner): **editorial "paper" look** so the site feels human-made, not an AI template: off-white paper, black ink, one saffron accent, Instrument Serif headings + Instrument Sans text, thin rules, numbered sections. NO gradients, glows, pill badges, emoji icons or gradient buttons; links are underlined text. Colours are CSS variables in `:root` of `style.css`. No personal photo (owner's choice).
 - Must stay responsive (test at 390px wide, no horizontal scroll) and deployable on GitHub Pages.
 - Large videos go on YouTube/Vimeo, not in the repo.

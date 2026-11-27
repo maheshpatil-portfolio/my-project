@@ -3,150 +3,148 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Portfolio — Graphic Design, Video & Motion</title>
-  <meta name="description" content="Portfolio of a graphic designer, video editor and motion graphics designer.">
+  <title>Mahesh Patil — Graphic Designer & Motion Graphics Editor</title>
+  <meta name="description" content="Portfolio of Mahesh Patil, graphic designer and motion graphics editor in Hyderabad.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header class="nav">
     <a href="#top" class="logo" data-site="name">Mahesh Patil</a>
-    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">Menu</button>
     <nav class="nav-links">
-      <a href="#case-studies" id="nav-cs" hidden>Case studies</a>
-      <a href="#work">Work</a>
+      <a href="#case-studies" id="nav-cs" hidden>Work</a>
+      <a href="#work">More work</a>
       <a href="#experience">Experience</a>
       <a href="#about">About</a>
-      <a href="#contact" class="btn btn-small">Contact</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <main id="top">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-bg" aria-hidden="true">
-        <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
-      </div>
-      <p class="eyebrow"><span class="dot"></span><span data-site="availability"></span></p>
-      <h1>
-        <span class="line">Design.</span>
-        <span class="line">Edit.</span>
-        <span class="line gradient-text">Motion.</span>
-      </h1>
-      <p class="hero-role" data-site="role"></p>
+    <!-- INTRO -->
+    <section class="hero wrap">
+      <h1 id="hero-title"></h1>
       <p class="hero-tagline" data-site="tagline"></p>
-      <div class="hero-actions">
-        <a href="#work" class="btn">View my work</a>
-        <button class="btn btn-ghost" id="showreel-btn" hidden>▶ Watch showreel</button>
-        <a class="btn btn-ghost" id="resume-btn" href="#" download hidden>↓ Download résumé</a>
-        <a class="btn btn-ghost" id="pdf-btn" href="#" target="_blank" rel="noopener" hidden>↓ Portfolio PDF</a>
-      </div>
-      <div class="brands" id="brands" hidden aria-label="Brands I've worked with">
-        <p class="brands-label">Brands I've worked with</p>
+      <dl class="hero-facts">
+        <div><dt>Based in</dt><dd data-site="location"></dd></div>
+        <div><dt>Experience</dt><dd>10+ years, in-house</dd></div>
+        <div><dt>Status</dt><dd data-site="availability"></dd></div>
+        <div class="hero-links">
+          <dt>Get in touch</dt>
+          <dd>
+            <a href="#contact" class="link">Contact</a>
+            <a class="link" id="resume-btn" href="#" download hidden>Résumé (PDF)</a>
+            <button class="link" id="showreel-btn" hidden>Showreel</button>
+            <a class="link" id="pdf-btn" href="#" target="_blank" rel="noopener" hidden>Portfolio (PDF)</a>
+          </dd>
+        </div>
+      </dl>
+      <div class="brands" id="brands" hidden>
+        <p class="label">Worked with</p>
         <ul class="brands-list" id="brands-list"></ul>
       </div>
     </section>
 
-
     <!-- SHOWREEL (shown when SITE.showreel is set) -->
-    <section id="showreel" class="section" hidden>
-      <div class="section-head"><h2>Showreel</h2><p class="section-note" data-site="role"></p></div>
+    <section id="showreel" class="section wrap" hidden>
+      <div class="section-head"><p class="label">Showreel</p></div>
       <button class="reel-frame" id="reel-play" aria-label="Play showreel">
         <video id="reel-loop" muted loop playsinline preload="none" hidden></video>
         <img id="reel-poster" alt="" hidden>
-        <span class="reel-play-icon" aria-hidden="true">▶</span>
-        <span class="reel-label">Watch full reel</span>
+        <span class="reel-label">Play showreel</span>
       </button>
       <ol class="reel-breakdown" id="reel-breakdown" hidden></ol>
     </section>
 
-    <!-- CASE STUDIES (filled from CASE_STUDIES in js/data.js; hidden when there are none) -->
-    <section id="case-studies" class="section" hidden>
+    <!-- CASE STUDIES -->
+    <section id="case-studies" class="section wrap" hidden>
       <div class="section-head">
-        <h2>Case studies</h2>
-        <p class="section-note">In-depth projects: the brief, the thinking and the final work.</p>
+        <p class="label">Selected work</p>
+        <p class="section-note">Three projects, from brief to final work.</p>
       </div>
-      <div class="cs-grid" id="cs-grid"></div>
+      <div class="cs-list" id="cs-grid"></div>
     </section>
 
     <!-- WORK -->
-    <section id="work" class="section">
+    <section id="work" class="section wrap">
       <div class="section-head">
-        <h2 id="work-title">Selected work</h2>
+        <p class="label" id="work-title">Selected work</p>
         <div class="filters" role="tablist" aria-label="Filter projects">
           <button class="filter active" data-filter="all">All</button>
-          <button class="filter" data-filter="graphic">Graphic Design</button>
-          <button class="filter" data-filter="motion">Motion Graphics</button>
+          <button class="filter" data-filter="graphic">Graphic design</button>
+          <button class="filter" data-filter="motion">Motion</button>
         </div>
       </div>
       <div class="grid" id="project-grid"></div>
     </section>
 
     <!-- SERVICES -->
-    <section id="services" class="section">
-      <h2>What I bring</h2>
+    <section id="services" class="section wrap">
+      <div class="section-head"><p class="label">What I do</p></div>
       <div class="services" id="services-list"></div>
     </section>
 
     <!-- EXPERIENCE -->
-    <section id="experience" class="section">
-      <h2>Experience</h2>
+    <section id="experience" class="section wrap">
+      <div class="section-head"><p class="label">Experience</p></div>
       <ol class="timeline" id="timeline"></ol>
     </section>
 
     <!-- RECOGNITION / EDUCATION -->
-    <section class="section">
-      <h2>Recognition &amp; education</h2>
+    <section class="section wrap">
+      <div class="section-head"><p class="label">Recognition &amp; education</p></div>
       <div class="info-grid">
-        <div class="info-card reveal"><h3>Achievements</h3><ul id="achievements"></ul></div>
-        <div class="info-card reveal"><h3>Education</h3><ul id="education"></ul></div>
-        <div class="info-card reveal"><h3>Certifications</h3><ul id="certifications"></ul></div>
-        <div class="info-card reveal"><h3>Languages</h3><ul id="languages"></ul></div>
+        <div class="info-card"><h3>Achievements</h3><ul id="achievements"></ul></div>
+        <div class="info-card"><h3>Education</h3><ul id="education"></ul></div>
+        <div class="info-card"><h3>Certifications</h3><ul id="certifications"></ul></div>
+        <div class="info-card"><h3>Languages</h3><ul id="languages"></ul></div>
       </div>
     </section>
 
     <!-- ABOUT -->
-    <section id="about" class="section about">
-      <div>
-        <h2>About me</h2>
-        <div id="about-text"></div>
-        <div class="stats" id="stats"></div>
-      </div>
-      <div>
-        <h3>Tools I use</h3>
-        <ul class="tools" id="tools"></ul>
+    <section id="about" class="section wrap">
+      <div class="section-head"><p class="label">About</p></div>
+      <div class="about">
+        <div class="about-text" id="about-text"></div>
+        <aside class="about-side">
+          <div class="stats" id="stats"></div>
+          <h3>Tools</h3>
+          <ul class="tools" id="tools"></ul>
+        </aside>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="section contact">
-      <h2>Let's work <span class="gradient-text">together</span>.</h2>
-      <p>Hiring for a design, video or motion role? I'd love to hear about your team.</p>
-      <a class="btn btn-big" id="email-link" href="#"></a>
-      <div class="contact-files">
-        <a class="btn btn-ghost btn-small" id="resume-btn-2" href="#" download hidden>↓ Résumé</a>
-        <a class="btn btn-ghost btn-small" id="pdf-btn-2" href="#" target="_blank" rel="noopener" hidden>↓ Portfolio PDF</a>
-      </div>
+    <section id="contact" class="section wrap contact">
+      <div class="section-head"><p class="label">Contact</p></div>
+      <h2>Hiring for a design or motion role? <em>Let's talk.</em></h2>
+      <a class="email" id="email-link" href="#"></a>
+      <ul class="contact-links">
+        <li><a class="link" id="resume-btn-2" href="#" download hidden>Résumé (PDF)</a></li>
+        <li><a class="link" id="pdf-btn-2" href="#" target="_blank" rel="noopener" hidden>Portfolio (PDF)</a></li>
+      </ul>
       <ul class="socials" id="socials"></ul>
     </section>
   </main>
 
-  <footer class="footer">
-    <p>© <span id="year"></span> <span data-site="name"></span> · <span data-site="location"></span></p>
+  <footer class="footer wrap">
+    <p>© <span id="year"></span> <span data-site="name"></span></p>
+    <p data-site="location"></p>
   </footer>
 
   <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-labelledby="lb-title">
     <div class="lb-inner">
-      <button class="lb-close" aria-label="Close">✕</button>
+      <button class="lb-close" aria-label="Close">Close</button>
       <div class="lb-info">
         <div class="lb-tags" id="lb-cat"></div>
         <h3 id="lb-title"></h3>
         <p id="lb-desc"></p>
         <p class="lb-meta" id="lb-meta"></p>
-        <a class="btn btn-ghost btn-small lb-link" id="lb-link" href="#" target="_blank" rel="noopener" hidden>View on Behance ↗</a>
+        <a class="link lb-link" id="lb-link" href="#" target="_blank" rel="noopener" hidden>View on Behance</a>
       </div>
       <div class="lb-media" id="lb-media"></div>
     </div>

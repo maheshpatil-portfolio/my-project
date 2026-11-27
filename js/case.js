@@ -35,7 +35,7 @@
     // ai: "ChatGPT" (or true) marks an AI-generated image: adds a tag + an honest default caption.
     const tool = o.ai === true ? "AI" : o.ai;
     const caption = o.caption || "";
-    return `<figure class="${o.ai ? "is-ai" : ""}"><div class="fig-img"><img src="${esc(o.src)}" alt="${esc(o.alt || alt)}" loading="lazy">${o.ai ? `<span class="ai-tag">${esc(o.tag || `AI concept · ${tool}`)}</span>` : ""}</div>${caption ? `<figcaption>${esc(caption)}</figcaption>` : ""}</figure>`;
+    return `<figure class="${o.ai ? "is-ai" : ""}"><div class="fig-img"><img src="${esc(o.src)}" alt="${esc(o.alt || alt)}" loading="lazy">${o.ai ? `<span class="ai-tag">${esc(o.tag || `Made with AI · ${tool}`)}</span>` : ""}</div>${caption ? `<figcaption>${esc(caption)}</figcaption>` : ""}</figure>`;
   }
   const paras = (t) => [].concat(t || []).map((p) => `<p>${esc(p)}</p>`).join("");
 
@@ -49,7 +49,7 @@
   if (!c) {
     document.title = `Not found — ${SITE.name}`;
     main.innerHTML = `<section class="section cs-missing"><h1>Case study not found</h1>
-      <p>It may have moved or isn't published yet.</p><a class="btn" href="index.html">Back to home</a></section>`;
+      <p>It may have moved or isn't published yet.</p><a class="link" href="index.html">Back to home</a></section>`;
     return;
   }
 
@@ -64,13 +64,8 @@
   main.innerHTML = `
     <article class="cs">
       <header class="section cs-hero">
-        <a class="cs-back" href="index.html#case-studies">← All case studies</a>
-        <div class="cs-badges">
-          ${c.concept ? `<span class="badge concept">Concept project</span>` : ""}
-          ${c.draft ? `<span class="badge draft">Draft — hidden from the live site</span>` : ""}
-          ${c.inProgress ? `<span class="badge wip">In progress</span>` : ""}
-          ${[].concat(c.categories || []).map((k) => `<span class="tag ${esc(k)}">${LABELS[k] || esc(k)}</span>`).join("")}
-        </div>
+        <a class="cs-back" href="index.html#case-studies">All work</a>
+        <p class="cs-kicker">${String(i + 1).padStart(2, "0")} — ${[].concat(c.categories || []).map((k) => LABELS[k] || esc(k)).join(", ")}${c.concept ? " · Concept project" : ""}${c.inProgress ? " · In progress" : ""}${c.draft ? " · Draft (hidden from the live site)" : ""}</p>
         <h1>${esc(c.title)}</h1>
         <p class="cs-summary">${esc(c.summary)}</p>
       </header>
@@ -96,8 +91,8 @@
           <ol>${c.decisions.map((d) => `<li><h3>${esc(d.title)}</h3><p>${esc(d.text)}</p></li>`).join("")}</ol>
         </section>` : ""}
       <nav class="section cs-next">
-        ${next ? `<a href="project.html?p=${encodeURIComponent(next.slug)}${q}"><span>Next case study</span><strong>${esc(next.title)} →</strong></a>`
-               : `<a href="index.html#about"><span>Keep exploring</span><strong>About ${esc(SITE.name)} →</strong></a>`}
+        ${next ? `<a href="project.html?p=${encodeURIComponent(next.slug)}${q}"><span>Next case study</span><strong>${esc(next.title)}</strong></a>`
+               : `<a href="index.html#about"><span>Keep exploring</span><strong>About ${esc(SITE.name)}</strong></a>`}
       </nav>
     </article>`;
 })();

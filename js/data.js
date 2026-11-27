@@ -6,6 +6,8 @@
 const SITE = {
   name: "Mahesh Patil",
   role: "Graphic Designer & Motion Graphics Editor · 10+ yrs",
+  // Big intro line on the home page. "&" is set in italic automatically.
+  headline: "Graphic designer & motion graphics editor.",
   tagline: "I build brand systems, campaigns, presentations and motion that stay consistent from the first sketch to the final frame.",
   location: "Hyderabad, India",
   email: "maheshpatil1@hotmail.com",

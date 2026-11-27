@@ -12,6 +12,7 @@
     if (value) el.textContent = value;
   });
   document.title = `${SITE.name} — ${SITE.role}`;
+  if (SITE.headline) $("#hero-title").innerHTML = escapeHtml(SITE.headline).replace(" &amp; ", " <em>&amp;</em><br>");
   $("#year").textContent = new Date().getFullYear();
 
   /* ---------- Media helpers ---------- */
@@ -44,7 +45,7 @@
     return `<div class="placeholder" style="background:linear-gradient(135deg,${a},${b})">Add images or a video link in js/data.js</div>`;
   }
 
-  const tagsHtml = (p) => cats(p).map((c) => `<span class="tag ${escapeHtml(c)}">${CATEGORY_LABELS[c] || escapeHtml(c)}</span>`).join(" ");
+  const tagsHtml = (p) => `<span class="tags">${cats(p).map((c) => CATEGORY_LABELS[c] || escapeHtml(c)).join(", ")}</span>`;
 
   /* ---------- Projects ---------- */
   const grid = $("#project-grid");
@@ -143,25 +144,28 @@
     $("#case-studies").hidden = false;
     $("#nav-cs").hidden = false;
     $("#work-title").textContent = "More work";
-    $("#cs-grid").innerHTML = studies.map((c) => `
+    $("#cs-grid").innerHTML = studies.map((c, i) => {
+      const status = [c.concept && "Concept project", c.inProgress && "In progress", c.draft && "Draft"].filter(Boolean).join(" · ");
+      const kinds = [].concat(c.categories || []).map((k) => CATEGORY_LABELS[k] || k).join(", ");
+      return `
       <a class="cs-card" href="project.html?p=${encodeURIComponent(c.slug)}${preview ? "&preview" : ""}">
-        <div class="cs-card-img">${c.thumb ? `<img src="${escapeHtml(c.thumb)}" alt="${escapeHtml(c.title)}" loading="lazy">`
-          : `<div class="cs-placeholder" style="background:linear-gradient(135deg,${escapeHtml((c.colors || [])[0] || "#1b1b28")},${escapeHtml((c.colors || [])[1] || "#7b5cff")})"><span>${escapeHtml(c.title)}</span></div>`}
-          ${c.preview ? `<video class="cs-preview" src="${escapeHtml(c.preview)}" muted loop playsinline preload="none" aria-hidden="true"></video>` : ""}
-          ${c.thumb && c.thumbAi ? `<span class="ai-tag">AI concept</span>` : ""}
-          <div class="cs-card-badges">
-            ${c.concept ? `<span class="badge concept">Concept project</span>` : ""}
-            ${c.draft ? `<span class="badge draft">Draft</span>` : ""}
-            ${c.inProgress ? `<span class="badge wip">In progress</span>` : ""}
-          </div>
-        </div>
-        <div class="cs-card-body">
-          <div>${[].concat(c.categories || []).map((k) => `<span class="tag ${escapeHtml(k)}">${CATEGORY_LABELS[k] || escapeHtml(k)}</span>`).join(" ")}</div>
+        <div class="cs-card-head">
+          <span class="cs-num">${String(i + 1).padStart(2, "0")}</span>
           <h3>${escapeHtml(c.title)}</h3>
-          <p>${escapeHtml(c.summary)}</p>
-          <span class="cs-more">Read case study →</span>
+          <span class="cs-kind">${escapeHtml(kinds)}</span>
+          <span class="cs-year">${escapeHtml(c.year || "")}</span>
         </div>
-      </a>`).join("");
+        <div class="cs-card-img">${c.thumb ? `<img src="${escapeHtml(c.thumb)}" alt="${escapeHtml(c.title)}" loading="lazy">`
+          : `<div class="cs-placeholder"><span>${escapeHtml(c.title)}</span></div>`}
+          ${c.preview ? `<video class="cs-preview" src="${escapeHtml(c.preview)}" muted loop playsinline preload="none" aria-hidden="true"></video>` : ""}
+        </div>
+        <div class="cs-card-foot">
+          <p>${escapeHtml(c.summary)}</p>
+          <p class="cs-status">${escapeHtml(status)}${c.thumb && c.thumbAi ? `${status ? " · " : ""}Cover image made with AI` : ""}</p>
+          <span class="cs-more">View project</span>
+        </div>
+      </a>`;
+    }).join("");
     // Hover previews: play a short muted loop on hover (mouse devices only).
     if (window.matchMedia("(hover: hover)").matches && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       document.querySelectorAll(".cs-card").forEach((card) => {
@@ -209,16 +213,16 @@
     .forEach(([sel, href]) => { if (href) { const el = $(sel); el.href = href; el.hidden = false; } });
 
   /* ---------- Services, about, tools, contact ---------- */
-  $("#services-list").innerHTML = SITE.services.map((s) => `
-    <article class="service reveal">
-      <div class="service-icon" aria-hidden="true">${escapeHtml(s.icon)}</div>
+  $("#services-list").innerHTML = SITE.services.map((s, i) => `
+    <article class="service">
+      <span class="service-num">${String(i + 1).padStart(2, "0")}</span>
       <h3>${escapeHtml(s.title)}</h3>
       <p>${escapeHtml(s.text)}</p>
     </article>`).join("");
 
   /* ---------- Experience & recognition ---------- */
   $("#timeline").innerHTML = (SITE.experience || []).map((x) => `
-    <li class="job reveal">
+    <li class="job">
       <div class="job-head">
         <div>
           <h3>${escapeHtml(x.role)}</h3>
@@ -243,7 +247,7 @@
   email.textContent = SITE.email;
   email.href = `mailto:${SITE.email}`;
   $("#socials").innerHTML = SITE.socials.map((s) =>
-    `<li><a href="${escapeHtml(s.url)}" target="_blank" rel="noopener">${escapeHtml(s.label)} ↗</a></li>`).join("");
+    `<li><a class="link" href="${escapeHtml(s.url)}" target="_blank" rel="noopener">${escapeHtml(s.label)}</a></li>`).join("");
 
   /* ---------- Nav ---------- */
   const nav = $(".nav");
@@ -255,13 +259,6 @@
   });
   links.addEventListener("click", (e) => { if (e.target.closest("a")) links.classList.remove("open"); });
   window.addEventListener("scroll", () => nav.classList.toggle("scrolled", window.scrollY > 20), { passive: true });
-
-  /* ---------- Scroll reveal ---------- */
-  document.querySelectorAll(".section h2, .about > div, .contact > *").forEach((el) => el.classList.add("reveal"));
-  const io = "IntersectionObserver" in window && new IntersectionObserver((entries) => {
-    entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("visible"); io.unobserve(en.target); } });
-  }, { threshold: 0.15 });
-  document.querySelectorAll(".reveal").forEach((el) => io ? io.observe(el) : el.classList.add("visible"));
 
   if (!PROJECTS.length) {
     $("#work").hidden = true;
