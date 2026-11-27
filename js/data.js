@@ -237,7 +237,10 @@ const CASE_STUDIES = [
     inProgress: true,
     summary: "A presentation and infographic system for a solar company's annual results: master template, investor deck, data visuals and a data film.",
     categories: ["graphic", "motion"],
-    thumb: "",
+    thumb: "assets/images/concepts/suryana-renewables/ai/boardroom-deck.webp",
+    thumbAi: true,
+    hero: { src: "assets/images/concepts/suryana-renewables/ai/boardroom-deck.webp", ai: "ChatGPT", alt: "Concept of the Suryana results deck on a boardroom screen and laptop",
+            caption: "Presentation direction — AI-generated concept (ChatGPT). Final template and deck in progress by Mahesh Patil." },
     colors: ["#0F1B2D", "#FF8A1F"],
     preview: "",
     role: "Presentation design, data visualisation, layout, motion",
@@ -257,6 +260,20 @@ const CASE_STUDIES = [
       { heading: "The insight", text: [
         "A slide should say one thing, and the title should say it. Executives read titles, not bullets.",
       ] },
+      {
+        heading: "Visual direction",
+        text: [
+          "AI-generated mood images set the tone before the real slides are built: sunrise-warm imagery of the solar parks, and a clean navy, orange and green data style for charts and infographics.",
+          "Next, these are rebuilt by hand as a working PowerPoint template, with native editable charts and the real (fictional) figures from the data sheet.",
+        ],
+        layout: "grid",
+        images: [
+          { src: "assets/images/concepts/suryana-renewables/ai/solar-park-sunrise.webp", ai: "ChatGPT", alt: "Aerial view of a solar park in Rajasthan at sunrise",
+            caption: "Photography mood for covers and section dividers — AI-generated (ChatGPT)." },
+          { src: "assets/images/concepts/suryana-renewables/ai/infographic-india.webp", ai: "ChatGPT", alt: "Infographic concept with an India map, bar chart and donut chart",
+            caption: "Infographic style direction — AI-generated (ChatGPT). Map is illustrative only." },
+        ],
+      },
       {
         heading: "Coming next",
         text: ["This case study is being built in public. Next up:"],
