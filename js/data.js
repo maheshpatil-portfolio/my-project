@@ -336,7 +336,8 @@ const CASE_STUDIES = [
     slug: "kesar-lane",
     title: "Kesar Lane",
     concept: true,
-    draft: true,
+    draft: false,
+    inProgress: true,
     summary: "A Diwali gifting campaign for a home-fragrance brand: Instagram grid, gift-guide carousel, stories, three reels and ad variants.",
     categories: ["graphic", "video"],
     thumb: "",
@@ -359,6 +360,16 @@ const CASE_STUDIES = [
       { heading: "The insight", text: [
         "Diwali is the one time of year your home is supposed to smell like a memory. The campaign asks: \"What does Diwali smell like to you?\"",
       ] },
+      {
+        heading: "Coming next",
+        text: ["This case study is being built in public. Next up:"],
+        list: [
+          "Key visual and the 9-post Instagram grid",
+          "Eight-slide gift-guide carousel and six stories",
+          "Three reels for tease, launch and gift rush",
+          "Nine ad variants, WhatsApp creatives and the AI process board",
+        ],
+      },
     ],
   },
 ];
