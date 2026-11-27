@@ -34,8 +34,8 @@
     const o = typeof img === "string" ? { src: img } : img;
     // ai: "ChatGPT" (or true) marks an AI-generated image: adds a tag + an honest default caption.
     const tool = o.ai === true ? "AI" : o.ai;
-    const caption = o.caption || (o.ai ? `AI-generated concept (${tool}). Final design in progress by ${SITE.name}.` : "");
-    return `<figure class="${o.ai ? "is-ai" : ""}"><div class="fig-img"><img src="${esc(o.src)}" alt="${esc(o.alt || alt)}" loading="lazy">${o.ai ? `<span class="ai-tag">AI concept</span>` : ""}</div>${caption ? `<figcaption>${esc(caption)}</figcaption>` : ""}</figure>`;
+    const caption = o.caption || "";
+    return `<figure class="${o.ai ? "is-ai" : ""}"><div class="fig-img"><img src="${esc(o.src)}" alt="${esc(o.alt || alt)}" loading="lazy">${o.ai ? `<span class="ai-tag">AI concept · ${esc(tool)}</span>` : ""}</div>${caption ? `<figcaption>${esc(caption)}</figcaption>` : ""}</figure>`;
   }
   const paras = (t) => [].concat(t || []).map((p) => `<p>${esc(p)}</p>`).join("");
 
@@ -58,9 +58,7 @@
   const next = list.length > 1 ? list[(i + 1) % list.length] : null;
   const meta = [
     ["Role", c.role],
-    ["Year", c.year],
     ["Tools", (c.tools || []).join(", ")],
-    ["Deliverables", (c.deliverables || []).join(", ")],
   ].filter(([, v]) => v);
 
   main.innerHTML = `
@@ -75,16 +73,13 @@
         </div>
         <h1>${esc(c.title)}</h1>
         <p class="cs-summary">${esc(c.summary)}</p>
-        ${meta.length ? `<dl class="cs-meta">${meta.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>` : ""}
-        ${c.outcome ? `<div class="cs-outcome"><span>Outcome</span><p>${esc(c.outcome)}</p></div>` : ""}
-        ${c.concept ? `<p class="cs-note">Self-initiated concept project. The brand, products and figures are fictional. Final design, motion and editing by ${esc(SITE.name)}; any AI-assisted exploration is labelled where it appears.</p>` : ""}
       </header>
-      ${(c.decisions || []).length ? `
-        <section class="section cs-decisions">
-          <h2>Key decisions</h2>
-          <ol>${c.decisions.map((d) => `<li><h3>${esc(d.title)}</h3><p>${esc(d.text)}</p></li>`).join("")}</ol>
-        </section>` : ""}
       ${c.hero ? `<div class="cs-cover">${figure(c.hero, c.title)}</div>` : ""}
+      <div class="section cs-info">
+        ${meta.length ? `<dl class="cs-meta">${meta.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>` : ""}
+        ${c.outcome && !c.inProgress ? `<div class="cs-outcome"><span>Outcome</span><p>${esc(c.outcome)}</p></div>` : ""}
+        ${c.concept ? `<p class="cs-note">Concept project: fictional brand and figures. AI images are labelled.</p>` : ""}
+      </div>
       ${(c.sections || []).map((s) => `
         <section class="section cs-section">
           <div class="cs-text">
@@ -95,6 +90,11 @@
           ${(s.videos || []).length ? `<div class="cs-media">${s.videos.map(video).join("")}</div>` : ""}
           ${(s.images || []).length ? `<div class="cs-media ${s.layout === "grid" ? "cs-grid2" : ""}">${s.images.map((im) => figure(im, s.heading || c.title)).join("")}</div>` : ""}
         </section>`).join("")}
+      ${(c.decisions || []).length ? `
+        <section class="section cs-decisions">
+          <h2>Key decisions</h2>
+          <ol>${c.decisions.map((d) => `<li><h3>${esc(d.title)}</h3><p>${esc(d.text)}</p></li>`).join("")}</ol>
+        </section>` : ""}
       <nav class="section cs-next">
         ${next ? `<a href="project.html?p=${encodeURIComponent(next.slug)}${q}"><span>Next case study</span><strong>${esc(next.title)} →</strong></a>`
                : `<a href="index.html#about"><span>Keep exploring</span><strong>About ${esc(SITE.name)} →</strong></a>`}

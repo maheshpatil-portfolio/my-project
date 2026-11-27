@@ -384,3 +384,9 @@ h3 { font-size: 1.25rem; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .hero h1 .line, .reveal { opacity: 1; transform: none; }
 }
+
+/* Visual-first case pages: compact info strip under the cover image */
+.cs-info { padding-top: 2rem; padding-bottom: 0; }
+.cs-info .cs-meta { margin-top: 0; padding-top: 0; border-top: 0; }
+.cs-info .cs-note { margin-top: 1.2rem; font-size: .85rem; padding: .6rem 1rem; }
+.cs-hero { padding-bottom: 1.5rem; }

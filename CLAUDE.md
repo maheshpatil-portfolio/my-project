@@ -18,6 +18,7 @@ The owner's sessions can run out of context. Any fresh session must be able to c
 - Focus (Nov 2026, job-market based): 3 public case studies in this order — Suryana (corporate presentations + infographics + motion summary video), Kiro One (360° product launch: posters, in-store POSM kit, social, motion video), Kesar Lane (festive social + flyer/poster + motion reels). Chai Theory and Thoda are kept as drafts.
 - Content must stay factual to the owner's CV/Behance — don't invent clients, numbers or projects.
 - Portfolio research (Nov 2026): recruiters decide in ~5–20 s, so the first screen must show role, years, brands and a CTA; 3–5 deep case studies beat many shallow ones; case studies lead with problem, role, key decisions and outcome; keep media light (hover loops < 2 MB, respect reduced motion).
+- Visual-first (Nov 2026, owner's request): let the work speak. One-line brief, short captions (2–4 words), no long paragraphs; images come right after the title.
 - Dark theme; colors are CSS variables in `:root` of `style.css`.
 - Must stay responsive (test at 390px wide, no horizontal scroll) and deployable on GitHub Pages.
 - Large videos go on YouTube/Vimeo, not in the repo.
