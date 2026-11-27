@@ -72,8 +72,14 @@
         <h1>${esc(c.title)}</h1>
         <p class="cs-summary">${esc(c.summary)}</p>
         ${meta.length ? `<dl class="cs-meta">${meta.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>` : ""}
+        ${c.outcome ? `<div class="cs-outcome"><span>Outcome</span><p>${esc(c.outcome)}</p></div>` : ""}
         ${c.concept ? `<p class="cs-note">Self-initiated concept project. The brand, products and figures are fictional; all design, motion and editing by ${esc(SITE.name)}.</p>` : ""}
       </header>
+      ${(c.decisions || []).length ? `
+        <section class="section cs-decisions">
+          <h2>Key decisions</h2>
+          <ol>${c.decisions.map((d) => `<li><h3>${esc(d.title)}</h3><p>${esc(d.text)}</p></li>`).join("")}</ol>
+        </section>` : ""}
       ${c.hero ? `<div class="cs-cover">${figure(c.hero, c.title)}</div>` : ""}
       ${(c.sections || []).map((s) => `
         <section class="section cs-section">

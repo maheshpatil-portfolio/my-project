@@ -8,10 +8,12 @@ A fast, dark, modern portfolio site. Plain HTML/CSS/JavaScript — no build step
 |------|------------------------|
 | Name, role, tagline, email, location | `SITE` at the top |
 | Résumé download button | `SITE.resume` — put your PDF in `assets/` and write its path |
-| Showreel video | `SITE.showreel` — a YouTube/Vimeo link or `assets/videos/showreel.mp4` |
+| Showreel | `SITE.showreel` (YouTube/Vimeo link) + optional `showreelLoop` (short muted mp4), `showreelPoster`, `showreelBreakdown` (who-did-what list) |
+| Portfolio PDF button | `SITE.portfolioPdf` — put the PDF in `assets/` |
+| Brands strip | `SITE.brands` |
 | About text, stats, tools, services | `SITE.about`, `SITE.stats`, `SITE.tools`, `SITE.services` |
 | Social links (Behance, Instagram…) | `SITE.socials` |
-| Case studies (main work, own page each) | the `CASE_STUDIES` list — `draft: true` hides one until it's ready |
+| Case studies (main work, own page each) | the `CASE_STUDIES` list — `draft: true` hides one until it's ready; `outcome` and `decisions` show near the top; `preview` = 2–4 s mp4 that plays on hover |
 | Smaller projects grid | the `PROJECTS` list (empty = hidden) |
 
 ### Adding a project

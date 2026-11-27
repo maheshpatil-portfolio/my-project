@@ -146,6 +146,7 @@
     $("#cs-grid").innerHTML = studies.map((c) => `
       <a class="cs-card" href="project.html?p=${encodeURIComponent(c.slug)}${preview ? "&preview" : ""}">
         <div class="cs-card-img">${c.thumb ? `<img src="${escapeHtml(c.thumb)}" alt="${escapeHtml(c.title)}" loading="lazy">` : ""}
+          ${c.preview ? `<video class="cs-preview" src="${escapeHtml(c.preview)}" muted loop playsinline preload="none" aria-hidden="true"></video>` : ""}
           <div class="cs-card-badges">
             ${c.concept ? `<span class="badge concept">Concept project</span>` : ""}
             ${c.draft ? `<span class="badge draft">Draft</span>` : ""}
@@ -158,21 +159,51 @@
           <span class="cs-more">Read case study →</span>
         </div>
       </a>`).join("");
+    // Hover previews: play a short muted loop on hover (mouse devices only).
+    if (window.matchMedia("(hover: hover)").matches && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.querySelectorAll(".cs-card").forEach((card) => {
+        const v = card.querySelector(".cs-preview");
+        if (!v) return;
+        card.addEventListener("mouseenter", () => { card.classList.add("playing"); v.play().catch(() => {}); });
+        card.addEventListener("mouseleave", () => { card.classList.remove("playing"); v.pause(); v.currentTime = 0; });
+      });
+    }
   }
 
   /* ---------- Showreel ---------- */
-  const reelBtn = $("#showreel-btn");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (SITE.showreel) {
+    const openReel = () => openLightbox({ html: mediaHtml({ videos: [SITE.showreel] }), title: "Showreel", desc: SITE.role });
+    const reelBtn = $("#showreel-btn");
     reelBtn.hidden = false;
-    reelBtn.addEventListener("click", () => openLightbox({ html: mediaHtml({ videos: [SITE.showreel] }), title: "Showreel", desc: SITE.role }));
+    reelBtn.addEventListener("click", openReel);
+    $("#showreel").hidden = false;
+    $("#reel-play").addEventListener("click", openReel);
+    if (SITE.showreelPoster) { const im = $("#reel-poster"); im.src = SITE.showreelPoster; im.hidden = false; }
+    if (SITE.showreelLoop && !reduceMotion) {
+      const v = $("#reel-loop");
+      v.src = SITE.showreelLoop;
+      if (SITE.showreelPoster) v.poster = SITE.showreelPoster;
+      v.hidden = false;
+      new IntersectionObserver(([en]) => { en.isIntersecting ? v.play().catch(() => {}) : v.pause(); }, { threshold: 0.25 }).observe(v);
+    }
+    const bd = SITE.showreelBreakdown || [];
+    if (bd.length) {
+      const ol = $("#reel-breakdown");
+      ol.innerHTML = bd.map((x) => `<li><span class="reel-time">${escapeHtml(x.time)}</span><strong>${escapeHtml(x.project)}</strong><span>${escapeHtml(x.role || "")}</span></li>`).join("");
+      ol.hidden = false;
+    }
   }
 
-  /* ---------- Résumé ---------- */
-  if (SITE.resume) {
-    const resumeBtn = $("#resume-btn");
-    resumeBtn.href = SITE.resume;
-    resumeBtn.hidden = false;
+  /* ---------- Brands ---------- */
+  if ((SITE.brands || []).length) {
+    $("#brands-list").innerHTML = SITE.brands.map((x) => `<li>${escapeHtml(x)}</li>`).join("");
+    $("#brands").hidden = false;
   }
+
+  /* ---------- Résumé & PDF portfolio ---------- */
+  [["#resume-btn", SITE.resume], ["#resume-btn-2", SITE.resume], ["#pdf-btn", SITE.portfolioPdf], ["#pdf-btn-2", SITE.portfolioPdf]]
+    .forEach(([sel, href]) => { if (href) { const el = $(sel); el.href = href; el.hidden = false; } });
 
   /* ---------- Services, about, tools, contact ---------- */
   $("#services-list").innerHTML = SITE.services.map((s) => `

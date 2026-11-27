@@ -5,8 +5,8 @@
 
 const SITE = {
   name: "Mahesh Patil",
-  role: "Lead Graphic Designer · Creative Lead",
-  tagline: "10+ years of branding, motion graphics and video for teams at Genpact, Vivo, Coolpad and more.",
+  role: "Lead Graphic Designer · Brand, Motion & Video · 10+ years",
+  tagline: "I build brand systems, campaigns, presentations and motion that stay consistent from the first sketch to the final frame.",
   location: "Hyderabad, India",
   email: "maheshpatil1@hotmail.com",
   availability: "Open to full-time roles",
@@ -14,9 +14,18 @@ const SITE = {
   // Your résumé/CV PDF in assets/. Leave empty ("") to hide the "Download résumé" button.
   resume: "assets/Mahesh-Patil-Resume.pdf",
 
-  // Your showreel: a YouTube or Vimeo link, or a file like "assets/videos/showreel.mp4".
-  // Leave empty ("") to hide the "Watch showreel" button.
-  showreel: "",
+  // A PDF version of your portfolio (many companies in India ask for one). Leave "" to hide the button.
+  portfolioPdf: "",
+
+  // Companies you've worked for — shown as a strip under the intro.
+  brands: ["Genpact", "NetScore Technologies", "Coolpad", "Vivo", "Avantel", "AGX Retail"],
+
+  // SHOWREEL (60–90 s, strongest shot first). Leave showreel "" to hide the button and section.
+  showreel: "",            // YouTube / Vimeo link, or "assets/videos/showreel.mp4"
+  showreelLoop: "",        // optional short muted loop (5–10 s mp4, under 3 MB) shown in the section
+  showreelPoster: "",      // optional still image for the section
+  // What you did in each part of the reel: { time: "0:04", project: "Chai Theory — launch film", role: "Concept, edit, motion" }
+  showreelBreakdown: [],
 
   about: [
     "I'm Mahesh Patil, a Lead Graphic Designer with 10+ years of experience in branding, motion graphics, video editing and visual storytelling. I've built brand, retail and marketing creative for Vivo and Coolpad, led a team of designers and video editors, and today create presentations, infographics and digital assets for global stakeholders at Genpact.",
@@ -148,10 +157,19 @@ const CASE_STUDIES = [
     categories: ["graphic", "motion", "video"],
     thumb: "assets/images/concepts/chai-theory/process/logo-exploration-r1.webp",
     hero: "",
+    preview: "",   // optional 2–4 s muted mp4 loop (under 2 MB) that plays on hover over the card
     role: "Creative direction, brand identity, packaging, campaign, motion & video",
     year: "2026",
     tools: ["Illustrator", "Photoshop", "After Effects", "Premiere Pro", "ChatGPT", "Midjourney"],
     deliverables: ["Brand identity & guidelines", "Packaging range", "Launch deck", "Social campaign", "20s launch film", "Logo animation"],
+    // Result, shown near the top. For concept work, describe what was delivered.
+    outcome: "In progress — a complete, launch-ready brand system: identity, 5-blend packaging range, launch deck, social campaign, 20-second film and logo animation.",
+    // The 2–3 choices that shaped the work, and why.
+    decisions: [
+      { title: "θ as the symbol", text: "Theta, the symbol for theory, drawn as a cutting-chai glass — clever, ownable and still readable at 16 px." },
+      { title: "Numbered \"Theory\" system", text: "Every blend is a numbered theory (No. 1–5), giving packs, posts and ads one repeatable structure." },
+      { title: "Debate over claims", text: "No \"best chai\" claim: the campaign asks \"What's your theory?\" and turns India's chai debates into engagement." },
+    ],
     sections: [
       {
         heading: "The brief",

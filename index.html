@@ -41,7 +41,25 @@
         <a href="#work" class="btn">View my work</a>
         <button class="btn btn-ghost" id="showreel-btn" hidden>▶ Watch showreel</button>
         <a class="btn btn-ghost" id="resume-btn" href="#" download hidden>↓ Download résumé</a>
+        <a class="btn btn-ghost" id="pdf-btn" href="#" target="_blank" rel="noopener" hidden>↓ Portfolio PDF</a>
       </div>
+      <div class="brands" id="brands" hidden aria-label="Brands I've worked with">
+        <p class="brands-label">Brands I've worked with</p>
+        <ul class="brands-list" id="brands-list"></ul>
+      </div>
+    </section>
+
+
+    <!-- SHOWREEL (shown when SITE.showreel is set) -->
+    <section id="showreel" class="section" hidden>
+      <div class="section-head"><h2>Showreel</h2><p class="section-note" data-site="role"></p></div>
+      <button class="reel-frame" id="reel-play" aria-label="Play showreel">
+        <video id="reel-loop" muted loop playsinline preload="none" hidden></video>
+        <img id="reel-poster" alt="" hidden>
+        <span class="reel-play-icon" aria-hidden="true">▶</span>
+        <span class="reel-label">Watch full reel</span>
+      </button>
+      <ol class="reel-breakdown" id="reel-breakdown" hidden></ol>
     </section>
 
     <!-- CASE STUDIES (filled from CASE_STUDIES in js/data.js; hidden when there are none) -->
@@ -108,6 +126,10 @@
       <h2>Let's work <span class="gradient-text">together</span>.</h2>
       <p>Hiring for a design, video or motion role? I'd love to hear about your team.</p>
       <a class="btn btn-big" id="email-link" href="#"></a>
+      <div class="contact-files">
+        <a class="btn btn-ghost btn-small" id="resume-btn-2" href="#" download hidden>↓ Résumé</a>
+        <a class="btn btn-ghost btn-small" id="pdf-btn-2" href="#" target="_blank" rel="noopener" hidden>↓ Portfolio PDF</a>
+      </div>
       <ul class="socials" id="socials"></ul>
     </section>
   </main>
