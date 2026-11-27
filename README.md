@@ -43,7 +43,7 @@ A fast, dark, modern portfolio site. Plain HTML/CSS/JavaScript — no build step
 3. After a minute your site is live at `https://<your-username>.github.io/my-project/`.
 
 ## Previewing drafts
-Add `?preview` to the address to see draft case studies, e.g. `https://sharehub6224.github.io/my-project/?preview`.
+Add `?preview` to the address to see draft case studies, e.g. `https://maheshpatil-portfolio.github.io/?preview`.
 Drafts are invisible to everyone else.
 
 ## Preview locally

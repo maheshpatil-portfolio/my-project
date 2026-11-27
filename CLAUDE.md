@@ -6,7 +6,7 @@ The owner's sessions can run out of context. Any fresh session must be able to c
 2. **After every meaningful change** (site update, new images, a decision, a brief created or changed): update `STATUS.md` in the same commit — current state, decisions, links, and the exact next step — then push.
 3. **Record every decision the owner makes** (positioning, what to add or remove, tools he does or doesn't want used) in `STATUS.md` under "Decisions", with the date.
 4. **Never keep important state only in the chat.** If it matters for the next session, it goes in `STATUS.md` (or the briefs in Claude Docs, linked from `STATUS.md`).
-5. **To resume in a new window:** start a session with the `my-project` repo and the `my-project` environment, and say: "Read STATUS.md and continue."
+5. **To resume in a new window:** start a session with the `maheshpatil-portfolio/maheshpatil-portfolio.github.io` repo (formerly `sharehub6224/my-project`) and the `my-project` environment (add `maheshpatil-portfolio.github.io` to its allowed hosts for live checks), and say: "Read STATUS.md and continue."
 
 - Static site, no build step: `index.html`, `css/style.css`, `js/main.js`, `js/data.js`.
 - ALL content (text, projects, links) lives in `js/data.js`; `main.js` renders it. Keep content out of HTML.
