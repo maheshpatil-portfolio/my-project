@@ -152,7 +152,7 @@ h3 { font-size: 1.25rem; }
 .tag.motion { color: #ff7ad9; }
 
 /* Services */
-.services { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+.services { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
 .service { padding: 2rem; border-radius: var(--radius); background: var(--card); border: 1px solid var(--line); }
 .service-icon {
   width: 52px; height: 52px; border-radius: 14px; margin-bottom: 1.2rem;
@@ -171,6 +171,35 @@ h3 { font-size: 1.25rem; }
 .stat span { color: var(--muted); font-size: .9rem; }
 .tools { display: flex; flex-wrap: wrap; gap: .6rem; list-style: none; }
 .tools li { padding: .55rem 1rem; border-radius: 12px; background: var(--card); border: 1px solid var(--line); }
+
+/* Experience timeline */
+.timeline { list-style: none; position: relative; padding-left: 2rem; }
+.timeline::before {
+  content: ""; position: absolute; left: 6px; top: .5rem; bottom: .5rem; width: 2px;
+  background: linear-gradient(var(--accent), var(--accent-2), transparent);
+}
+.job { position: relative; padding: 0 0 2.5rem; }
+.job::before {
+  content: ""; position: absolute; left: calc(-2rem + 1px); top: .45rem;
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--bg); border: 2px solid var(--accent-2);
+}
+.job:first-child::before { background: var(--accent-2); box-shadow: 0 0 0 5px rgba(255, 79, 216, .2); }
+.job-head { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: .6rem; }
+.job-company { color: var(--accent-3); font-weight: 500; }
+.job-meta { color: var(--muted); font-size: .9rem; text-align: right; }
+.job ul { color: var(--muted); padding-left: 1.1rem; max-width: 760px; }
+.job ul li { margin-bottom: .25rem; }
+
+/* Recognition grid */
+.info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1.5rem; }
+.info-card { padding: 1.8rem; border-radius: var(--radius); background: var(--card); border: 1px solid var(--line); }
+.info-card h3 { margin-bottom: 1rem; }
+.info-card ul { list-style: none; display: grid; gap: .7rem; }
+.info-card li { color: var(--muted); padding-left: 1.2rem; position: relative; }
+.info-card li::before { content: "✦"; position: absolute; left: 0; color: var(--accent-2); font-size: .75rem; top: .2rem; }
+.info-card li strong { display: block; color: var(--text); font-weight: 500; }
+.info-card li span { font-size: .9rem; }
 
 /* Contact */
 .contact { text-align: center; }
@@ -225,6 +254,7 @@ h3 { font-size: 1.25rem; }
   .grid { grid-template-columns: 1fr; }
   .about { grid-template-columns: 1fr; gap: 2.5rem; }
   .section { padding: 4.5rem 1rem; }
+  .job-meta { text-align: left; }
   .hero { padding: 6rem 1rem 3rem; }
   .blob { opacity: .3; }
 }

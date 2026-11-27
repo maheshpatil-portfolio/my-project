@@ -134,6 +134,24 @@
       <p>${escapeHtml(s.text)}</p>
     </article>`).join("");
 
+  /* ---------- Experience & recognition ---------- */
+  $("#timeline").innerHTML = (SITE.experience || []).map((x) => `
+    <li class="job reveal">
+      <div class="job-head">
+        <div>
+          <h3>${escapeHtml(x.role)}</h3>
+          <p class="job-company">${escapeHtml(x.company)}</p>
+        </div>
+        <p class="job-meta">${escapeHtml(x.dates)}<br>${escapeHtml(x.location || "")}</p>
+      </div>
+      <ul>${(x.points || []).map((pt) => `<li>${escapeHtml(pt)}</li>`).join("")}</ul>
+    </li>`).join("");
+  const list = (id, items, fmt) => { const el = $(id); if (el) el.innerHTML = (items || []).map(fmt).join(""); };
+  list("#achievements", SITE.achievements, (t) => `<li>${escapeHtml(t)}</li>`);
+  list("#education", SITE.education, (e) => `<li><strong>${escapeHtml(e.title)}</strong><span>${escapeHtml(e.place)}</span></li>`);
+  list("#certifications", SITE.certifications, (t) => `<li>${escapeHtml(t)}</li>`);
+  list("#languages", SITE.languages, (t) => `<li>${escapeHtml(t)}</li>`);
+
   $("#about-text").innerHTML = SITE.about.map((t) => `<p>${escapeHtml(t)}</p>`).join("");
   $("#stats").hidden = !(SITE.stats && SITE.stats.length);
   $("#stats").innerHTML = (SITE.stats || []).map((s) => `<div class="stat"><strong>${escapeHtml(s.value)}</strong><span>${escapeHtml(s.label)}</span></div>`).join("");
