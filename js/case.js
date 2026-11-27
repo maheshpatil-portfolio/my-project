@@ -66,7 +66,7 @@
       <header class="section cs-hero">
         <a class="cs-back" href="index.html#case-studies">All work</a>
         <p class="cs-kicker">${String(i + 1).padStart(2, "0")} — ${[].concat(c.categories || []).map((k) => LABELS[k] || esc(k)).join(", ")}${c.concept ? " · Concept project" : ""}${c.inProgress ? " · In progress" : ""}${c.draft ? " · Draft (hidden from the live site)" : ""}</p>
-        <h1>${esc(c.title)}</h1>
+        <div class="title-block cs-title"><h1>${esc(c.title)}</h1>${c.scriptLabel ? `<span class="script">${esc(c.scriptLabel)}</span>` : ""}</div>
         <p class="cs-summary">${esc(c.summary)}</p>
       </header>
       ${c.hero ? `<div class="cs-cover">${figure(c.hero, c.title)}</div>` : ""}

@@ -12,7 +12,7 @@
     if (value) el.textContent = value;
   });
   document.title = `${SITE.name} — ${SITE.role}`;
-  if (SITE.headline) $("#hero-title").innerHTML = escapeHtml(SITE.headline).replace(" &amp; ", " <em>&amp;</em><br>");
+  if (SITE.heroScript) $("#hero-script").textContent = SITE.heroScript;
   $("#year").textContent = new Date().getFullYear();
 
   /* ---------- Media helpers ---------- */
@@ -147,22 +147,22 @@
     $("#cs-grid").innerHTML = studies.map((c, i) => {
       const status = [c.concept && "Concept project", c.inProgress && "In progress", c.draft && "Draft"].filter(Boolean).join(" · ");
       const kinds = [].concat(c.categories || []).map((k) => CATEGORY_LABELS[k] || k).join(", ");
+      const script = c.scriptLabel || "";
       return `
       <a class="cs-card" href="project.html?p=${encodeURIComponent(c.slug)}${preview ? "&preview" : ""}">
-        <div class="cs-card-head">
-          <span class="cs-num">${String(i + 1).padStart(2, "0")}</span>
-          <h3>${escapeHtml(c.title)}</h3>
-          <span class="cs-kind">${escapeHtml(kinds)}</span>
-          <span class="cs-year">${escapeHtml(c.year || "")}</span>
-        </div>
         <div class="cs-card-img">${c.thumb ? `<img src="${escapeHtml(c.thumb)}" alt="${escapeHtml(c.title)}" loading="lazy">`
           : `<div class="cs-placeholder"><span>${escapeHtml(c.title)}</span></div>`}
           ${c.preview ? `<video class="cs-preview" src="${escapeHtml(c.preview)}" muted loop playsinline preload="none" aria-hidden="true"></video>` : ""}
         </div>
-        <div class="cs-card-foot">
-          <p>${escapeHtml(c.summary)}</p>
-          <p class="cs-status">${escapeHtml(status)}${c.thumb && c.thumbAi ? `${status ? " · " : ""}Cover image made with AI` : ""}</p>
-          <span class="cs-more">View project</span>
+        <div class="cs-card-body">
+          <span class="cs-num" aria-hidden="true">${String(i + 1).padStart(2, "0")}</span>
+          <div class="cs-titles">
+            <h3>${escapeHtml(c.title)}</h3>
+            ${script ? `<span class="script cs-script">${escapeHtml(script)}</span>` : ""}
+          </div>
+          <p class="cs-summary-line">${escapeHtml(c.summary)}</p>
+          <p class="cs-status">${escapeHtml([kinds, c.year].filter(Boolean).join(" · "))}${status ? ` · ${escapeHtml(status)}` : ""}${c.thumb && c.thumbAi ? " · Cover image made with AI" : ""}</p>
+          <span class="cs-more">View project →</span>
         </div>
       </a>`;
     }).join("");

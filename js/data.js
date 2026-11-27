@@ -6,8 +6,8 @@
 const SITE = {
   name: "Mahesh Patil",
   role: "Graphic Designer & Motion Graphics Editor · 10+ yrs",
-  // Big intro line on the home page. "&" is set in italic automatically.
-  headline: "Graphic designer & motion graphics editor.",
+  // Handwritten script line under the name in the intro.
+  heroScript: "Designer & Motion Editor",
   tagline: "I build brand systems, campaigns, presentations and motion that stay consistent from the first sketch to the final frame.",
   location: "Hyderabad, India",
   email: "maheshpatil1@hotmail.com",
@@ -148,6 +148,7 @@ const SITE = {
    draft:   true   → hidden on the live site; preview with  index.html?preview
    inProgress: true → public, with an "In progress" badge
    thumbAi: true    → the card cover is AI-generated (adds an "AI concept" tag)
+   scriptLabel      → short handwritten word shown next to the title
    sections: each has heading, text (string or list of paragraphs), optional
              list (bullets), images (path or { src, caption, ai: "ChatGPT" }), layout: "grid"
              for 2 columns, and videos (YouTube / Vimeo links)
@@ -155,6 +156,7 @@ const SITE = {
 const CASE_STUDIES = [
   {
     slug: "suryana-renewables",
+    scriptLabel: "Presentations",   // handwritten word next to the title
     title: "Suryana Renewables",
     concept: true,
     draft: false,
@@ -220,6 +222,7 @@ const CASE_STUDIES = [
   },
   {
     slug: "kiro-one",
+    scriptLabel: "Product launch",   // handwritten word next to the title
     title: "Kiro One",
     concept: true,
     draft: false,
@@ -264,6 +267,7 @@ const CASE_STUDIES = [
   },
   {
     slug: "kesar-lane",
+    scriptLabel: "Festive campaign",   // handwritten word next to the title
     title: "Kesar Lane",
     concept: true,
     draft: false,
@@ -316,6 +320,7 @@ const CASE_STUDIES = [
   },
   {
     slug: "chai-theory",
+    scriptLabel: "Brand launch",   // handwritten word next to the title
     title: "Chai Theory",
     concept: true,
     draft: true,   // set aside Nov 2026 to focus on 3 case studies
@@ -394,6 +399,7 @@ const CASE_STUDIES = [
   },
   {
     slug: "thoda",
+    scriptLabel: "Explainer",   // handwritten word next to the title
     title: "Thoda",
     concept: true,
     draft: true,   // set aside Nov 2026 to focus on 3 case studies
