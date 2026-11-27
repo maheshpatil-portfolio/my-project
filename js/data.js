@@ -13,6 +13,10 @@ const SITE = {
   email: "maheshpatil1@hotmail.com",
   availability: "Open to full-time roles",
 
+  // true = show the "+ Add" placeholder boxes in More Work on the normal link (while work is in progress).
+  // Set to false before sharing the site, so empty slots are hidden.
+  showPlaceholders: true,
+
   // Your résumé/CV PDF in assets/. Leave empty ("") to hide the "Download résumé" button.
   resume: "assets/Mahesh-Patil-Resume.pdf",
 
@@ -469,8 +473,8 @@ const PROJECTS = [];
    MORE WORK, BY CATEGORY — shown on the home page under "More Work".
    items: your real work. Each item: { src: "assets/images/work/<file>.webp", brand: "Vivo", title: "In-store standee" }
           motion items can use { video: "https://youtu.be/…", brand: "…", title: "…" }
-   placeholders: reminders of what to add. They show ONLY on index.html?preview,
-          never on the live site. A category with no items is hidden on the live site.
+   placeholders: reminders of what to add. Shown when SITE.showPlaceholders is true (or with ?preview).
+          With showPlaceholders false, a category with no items is hidden.
    frame: "instagram" shows items inside an Instagram post frame.
    -------------------------------------------------------------------------- */
 const CATEGORIES = [

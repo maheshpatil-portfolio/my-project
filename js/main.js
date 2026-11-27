@@ -263,8 +263,9 @@
   /* ---------- More work, by category ---------- */
   const IG = `<div class="ig-head"><span class="ig-logo">Instagram</span><span class="ig-icons">♡ ⌯</span></div>`;
   const IG_FOOT = `<div class="ig-foot"><span>♥&nbsp;&nbsp;◯&nbsp;&nbsp;➤</span><span>⌑</span></div>`;
+  const showPh = preview || SITE.showPlaceholders;
   const catList = (typeof CATEGORIES === "undefined" ? [] : CATEGORIES)
-    .filter((c) => (c.items || []).length || (preview && (c.placeholders || []).length));
+    .filter((c) => (c.items || []).length || (showPh && (c.placeholders || []).length));
   if (catList.length) {
     $("#more-work").hidden = false;
     $("#nav-more").hidden = false;
@@ -276,8 +277,8 @@
           : `<div class="cat-img" style="aspect-ratio:${escapeHtml(c.ratio || "4 / 3")}"><img src="${escapeHtml(it.src)}" alt="${escapeHtml([it.brand, it.title].filter(Boolean).join(" — "))}" loading="lazy">${it.ai ? `<span class="ai-tag">${escapeHtml(it.tag || "Made with AI")}</span>` : ""}</div>`;
         return `<figure class="cat-item">${tile(media)}<figcaption><strong>${escapeHtml(it.brand || "")}</strong>${it.brand && it.title ? " · " : ""}${escapeHtml(it.title || "")}</figcaption></figure>`;
       }).join("");
-      const holders = preview ? (c.placeholders || []).map((t) =>
-        `<figure class="cat-item">${tile(`<div class="cat-ph" style="aspect-ratio:${escapeHtml(c.ratio || "4 / 3")}"><span>+ Add</span><p>${escapeHtml(t)}</p></div>`)}<figcaption>Placeholder (only visible in preview)</figcaption></figure>`).join("") : "";
+      const holders = showPh ? (c.placeholders || []).map((t) =>
+        `<figure class="cat-item">${tile(`<div class="cat-ph" style="aspect-ratio:${escapeHtml(c.ratio || "4 / 3")}"><span>+ Add</span><p>${escapeHtml(t)}</p></div>`)}<figcaption>Placeholder</figcaption></figure>`).join("") : "";
       return `
         <div class="cat" id="cat-${escapeHtml(c.id)}">
           <div class="cat-head">
