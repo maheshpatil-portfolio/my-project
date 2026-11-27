@@ -42,7 +42,7 @@ const SITE = {
 
   tools: [
     "Photoshop", "Illustrator", "InDesign", "Premiere Pro", "After Effects",
-    "Figma", "CorelDRAW", "ChatGPT", "Midjourney", "Leonardo AI",
+    "CorelDRAW", "ChatGPT", "Midjourney", "Leonardo AI",
   ],
 
   services: [
@@ -130,7 +130,7 @@ const SITE = {
     { title: "Diploma in Animation", place: "Arena Animation" },
   ],
 
-  certifications: ["Adobe Photoshop Certified", "UI/UX Design"],
+  certifications: ["Adobe Photoshop Certified"],
 
   languages: ["English", "Hindi", "Kannada", "Telugu"],
 
