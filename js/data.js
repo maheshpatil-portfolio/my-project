@@ -159,9 +159,10 @@ const CASE_STUDIES = [
     inProgress: true,   // shows an "In progress" badge; remove when the project is finished
     summary: "A 360° launch for a modern Indian chai brand: identity, packaging, campaign, launch film and motion.",
     categories: ["graphic", "motion", "video"],
-    thumb: "assets/images/concepts/chai-theory/process/logo-exploration-r1.webp",
+    thumb: "assets/images/concepts/chai-theory/ai/packaging-range.webp",
     thumbAi: true,
-    hero: "",
+    hero: { src: "assets/images/concepts/chai-theory/ai/packaging-range.webp", ai: "ChatGPT", alt: "Five Chai Theory tea boxes in turmeric, red, green, saffron and clay with line-art spices",
+            caption: "Packaging direction — AI-generated concept (ChatGPT). Final packaging design in progress by Mahesh Patil." },
     preview: "",   // optional 2–4 s muted mp4 loop (under 2 MB) that plays on hover over the card
     role: "Creative direction, brand identity, packaging, campaign, motion & video",
     year: "2026",
@@ -200,6 +201,20 @@ const CASE_STUDIES = [
         images: [
           { src: "assets/images/concepts/chai-theory/process/logo-exploration-r1.webp", ai: "Claude", caption: "Round 1 — quick vector studies of three routes, generated with AI assistance (Claude) as a starting point" },
           { src: "assets/images/concepts/chai-theory/process/logo-ai-exploration-chatgpt.webp", ai: "ChatGPT", caption: "AI ideation (ChatGPT), used for exploration only" },
+        ],
+      },
+      {
+        heading: "Visual direction",
+        text: [
+          "AI-generated mood images set the direction before the final design: a five-colour packaging range with single-line spice illustrations, warm product photography, and how the brand could live in a real space.",
+          "Next, these are rebuilt by hand: real die-lines, the final logo and type on every pack, and original illustrations.",
+        ],
+        layout: "grid",
+        images: [
+          { src: "assets/images/concepts/chai-theory/ai/chai-pour.webp", ai: "ChatGPT", alt: "Masala chai poured into a cutting-chai glass with whole spices on terracotta",
+            caption: "Product photography mood — AI-generated (ChatGPT)." },
+          { src: "assets/images/concepts/chai-theory/ai/office-kiosk.webp", ai: "ChatGPT", alt: "Concept of a Chai Theory kiosk in an office lobby",
+            caption: "Retail kiosk mood — AI-generated (ChatGPT). People shown are AI-generated, not real customers." },
         ],
       },
       {
