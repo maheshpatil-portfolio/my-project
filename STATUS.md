@@ -12,7 +12,7 @@ retail / in-store branding (Vivo, Coolpad, AGX: in-shop branding, signage, dangl
 ## Case studies (all concept projects, all `inProgress: true`)
 | Order | Slug | Status | Brief (Claude Docs) |
 |---|---|---|---|
-| 1 | suryana-renewables | Public — 3 AI concept images | https://claude.ai/artifact/9qBnBS92EtFKshUNLwX7k9 |
+| 1 | suryana-renewables | Public — 3 AI mood images + 5 AI slide concepts (cover, KPIs, revenue, rooftop "after", thank-you) | https://claude.ai/artifact/9qBnBS92EtFKshUNLwX7k9 |
 | 2 | kiro-one | Public — 3 AI concept images (key visual = cover, showroom kit = hero, poster series) | https://claude.ai/artifact/UNo42qy7CW5f2NtQycEC9j |
 | 3 | kesar-lane | Public — 2 AI concept images (key visual = cover, gift box); pop-up stall image still to come | https://claude.ai/artifact/Fc7qK6mQfh75MEdBh3DZfm |
 | – | chai-theory | Draft (hidden) — has logo exploration + 3 AI images | https://claude.ai/artifact/MgBFfKHp3wEAD3eAuhnDZj |
@@ -25,6 +25,7 @@ retail / in-store branding (Vivo, Coolpad, AGX: in-shop branding, signage, dangl
 - After every push: wait for the live site to match (`curl` js/data.js vs local), then check it in Playwright via the proxy.
 
 ## Decisions (newest first)
+- 2026-11-27 — Suryana: 5 slide concepts made by ChatGPT (owner confirmed) added, labelled AI, in "Deck direction" (cover) and "Key slides" (grid). Files `assets/images/concepts/suryana-renewables/ai/slide-*.webp`. Still missing: the "before" slide for the before/after pair. Thank-you slide tagline says "Powering a brighter tomorrow"; brand tagline is "Power that rises every day" — fix in the rebuild.
 - 2026-11-27 — Suryana logo: owner made a ChatGPT exploration (saved, not on site: `assets/images/concepts/suryana-renewables/process/logo-ai-exploration-chatgpt.webp`). Direction kept: 4-bar half-sun + flat horizon line + lowercase "suryana". Owner rebuilds it himself in PowerPoint (equal bar heights, horizon line half as tall). If the ChatGPT version is ever shown, label it AI-assisted (ChatGPT).
 - 2026-11-27 — Owner starts his own designs with Suryana slides, round 1 (from the brief): slide 1 cover, slide 2 KPI row, slide 3 revenue chart, and before/after pair 1. Export PNG 1920×1080. When received: add as his work (no `ai` flag) in a new "The deck" section and a "Before / after" section.
 - 2026-11-27 — Kesar Lane AI images added: key visual (cover) and gift-box flat lay, in a "Visual direction" grid. Pop-up stall image (16:9) pending; when it arrives, use it as the `hero` and add it to the grid.
@@ -38,6 +39,6 @@ retail / in-store branding (Vivo, Coolpad, AGX: in-shop branding, signage, dangl
 
 ## Next steps
 1. Kesar Lane: third image, pop-up stall with dangler and A3 poster (16:9). Owner generates it in ChatGPT; add as `hero` (ai: "ChatGPT") plus to the Visual direction grid.
-2. Waiting on Suryana round-1 slide exports (see Decisions). Then owner's own designs (slides, posters, in-store kit, motion videos) replace AI images over time; remove `inProgress` when a project is finished.
+2. Suryana: owner rebuilds the slides by hand in PowerPoint (+ the "before" slide); his versions replace the AI ones, with no AI label. Then owner's own designs (slides, posters, in-store kit, motion videos) replace AI images over time; remove `inProgress` when a project is finished.
 3. Owner to update his CV PDF (still lists UI/UX + Figma) and send it to replace `assets/Mahesh-Patil-Resume.pdf`.
 4. Later: 60–90 s showreel from the three projects' motion pieces.

@@ -197,11 +197,37 @@ const CASE_STUDIES = [
         ],
       },
       {
+        heading: "Deck direction",
+        text: [
+          "AI-generated slide concepts (ChatGPT) test the system on real content from the FY2026 data sheet: action titles that state the takeaway, Paper backgrounds, Deep Night type, and a single Sunrise orange highlight on the one number that matters.",
+          "Next, each slide is rebuilt by hand as a working PowerPoint template with native, editable charts.",
+        ],
+        images: [
+          { src: "assets/images/concepts/suryana-renewables/ai/slide-01-cover.webp", ai: "ChatGPT", alt: "Cover slide: Suryana Renewables FY2026 Results over a solar park at sunrise",
+            caption: "Slide 1, cover — AI-generated concept (ChatGPT)." },
+        ],
+      },
+      {
+        heading: "Key slides",
+        text: ["Each title states the takeaway, so a reader skimming only the titles still gets the story."],
+        layout: "grid",
+        images: [
+          { src: "assets/images/concepts/suryana-renewables/ai/slide-02-kpis.webp", ai: "ChatGPT", alt: "KPI slide: revenue 1,240 crore, capacity 1,640 MW, EBITDA margin 27%, 1,150 customers",
+            caption: "Slide 2, KPI row: only the revenue figure is highlighted — AI-generated concept (ChatGPT)." },
+          { src: "assets/images/concepts/suryana-renewables/ai/slide-03-revenue.webp", ai: "ChatGPT", alt: "Bar chart of revenue FY22 to FY26 with the FY26 bar in orange",
+            caption: "Slide 3, five-year revenue: grey bars, one orange highlight — AI-generated concept (ChatGPT)." },
+          { src: "assets/images/concepts/suryana-renewables/ai/slide-04-after-rooftop.webp", ai: "ChatGPT", alt: "Clustered bar chart of FY25 vs FY26 revenue by business line with rooftop FY26 in orange",
+            caption: "Revenue by business line, the redesigned \"after\" slide — AI-generated concept (ChatGPT)." },
+          { src: "assets/images/concepts/suryana-renewables/ai/slide-15-thank-you.webp", ai: "ChatGPT", alt: "Closing thank-you slide with the Suryana logo",
+            caption: "Closing slide — AI-generated concept (ChatGPT)." },
+        ],
+      },
+      {
         heading: "Coming next",
         text: ["This case study is being built in public. Next up:"],
         list: [
           "16-layout PowerPoint master template, chart style sheet and icon set",
-          "15-slide FY2026 investor deck",
+          "15-slide FY2026 investor deck, rebuilt by hand in PowerPoint from these concepts",
           "Before/after makeover of three slides",
           "Six infographics, annual report spreads and a 40-second motion summary video",
         ],
