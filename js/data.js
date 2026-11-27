@@ -135,7 +135,8 @@ const SITE = {
   languages: ["English", "Hindi", "Kannada", "Telugu"],
 
   socials: [
-    // Add more, e.g. { label: "LinkedIn", url: "https://www.linkedin.com/in/your-profile" },
+    { label: "LinkedIn", url: "https://www.linkedin.com/in/mahesh-patil-14380896" },
+    // Add more, e.g. { label: "Instagram", url: "https://www.instagram.com/your-handle" },
   ],
 };
 
