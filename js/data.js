@@ -274,7 +274,8 @@ const CASE_STUDIES = [
     inProgress: true,
     summary: "A Diwali gifting campaign for a home-fragrance brand: Instagram grid, gift-guide carousel, festive flyer and poster, pop-up dangler, motion reels and ad variants.",
     categories: ["graphic", "motion"],
-    thumb: "",
+    thumb: "assets/images/concepts/kesar-lane/ai/key-visual.webp",
+    thumbAi: true,
     colors: ["#2A1430", "#E8A33D"],
     preview: "",
     role: "Campaign concept, social design, motion posts, AI-assisted imagery",
@@ -294,6 +295,20 @@ const CASE_STUDIES = [
       { heading: "The insight", text: [
         "Diwali is the one time of year your home is supposed to smell like a memory. The campaign asks: \"What does Diwali smell like to you?\"",
       ] },
+      {
+        heading: "Visual direction",
+        text: [
+          "AI-generated concepts set the campaign mood before the real artwork: deep plum, warm candlelight, brass and marigold — calm and premium, so the posts stand out in a loud Diwali feed.",
+          "Next, the key visual, gift box, grid posts, flyer, poster and dangler are designed by hand, with real type, product names and layouts.",
+        ],
+        layout: "grid",
+        images: [
+          { src: "assets/images/concepts/kesar-lane/ai/key-visual.webp", ai: "ChatGPT", alt: "Candle in a glass jar with a brass lid, surrounded by lit clay diyas and marigolds on deep plum fabric",
+            caption: "Key visual direction — AI-generated (ChatGPT)." },
+          { src: "assets/images/concepts/kesar-lane/ai/gift-box.webp", ai: "ChatGPT", alt: "Open plum gift box with a candle, incense sticks, a brass lotus diya and a blank card",
+            caption: "Diwali gift box flat lay direction — AI-generated (ChatGPT)." },
+        ],
+      },
       {
         heading: "Coming next",
         text: ["This case study is being built in public. Next up:"],
