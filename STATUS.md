@@ -16,7 +16,7 @@ retail / in-store branding (Vivo, Coolpad, AGX: in-shop branding, signage, dangl
 |---|---|---|---|
 | 1 | suryana-renewables | Public — Claude-built 16-slide deck shown (tagged "Made with AI") incl. before/after + 2 ChatGPT mood images | https://claude.ai/artifact/9qBnBS92EtFKshUNLwX7k9 |
 | 2 | kiro-one | Public — 3 AI concept images (key visual = cover, showroom kit = hero, poster series) | https://claude.ai/artifact/UNo42qy7CW5f2NtQycEC9j |
-| 3 | kesar-lane | Public — 2 AI concept images (key visual = cover, gift box); pop-up stall image still to come | https://claude.ai/artifact/Fc7qK6mQfh75MEdBh3DZfm |
+| 3 | kesar-lane | Public — owner's logo + 3 Instagram posts (AI photos, his design), 2 AI mood images | https://claude.ai/artifact/Fc7qK6mQfh75MEdBh3DZfm |
 | – | chai-theory | Draft (hidden) — has logo exploration + 3 AI images | https://claude.ai/artifact/MgBFfKHp3wEAD3eAuhnDZj |
 | – | thoda | Draft (hidden) — has 3 AI images | https://claude.ai/artifact/LmpohDK2MnkpqqVnxzwcRN |
 
@@ -28,7 +28,7 @@ Owner designs logo + layouts himself over ChatGPT photos (photos get AI caption;
 - [ ] Product packaging + gift tag
 - [ ] Shopping bag + thank-you card
 - [ ] Suggested: brand guidelines page (logo, clear space, colours, fonts, do's/don'ts), corporate appeal
-Files not received yet: owner to send finished PNG/JPG exports (2160 px). Then add to the kesar-lane page: new "Brand & campaign" section first; caption posts "Photo: AI (ChatGPT) · Logo, layout and type: Mahesh Patil".
+Added 2026-11-27: `assets/images/concepts/kesar-lane/campaign/{logo,post-memory,post-gifts,post-calm}.webp` → "Brand & social" grid (first section). Logo has no AI tag; posts tagged "AI photo · design by Mahesh" (owner confirmed he did logo/layout/type; photos are ChatGPT). Card cover = post-memory (thumbAi). Tools corrected to Illustrator, Photoshop, ChatGPT (photos). AI tags moved to top-right so they don't cover designs. Old ChatGPT images now under "Mood images".
 
 ## How work gets added
 - Owner generates AI images himself in ChatGPT (do NOT generate images with ElevenLabs or any tool unless he asks by name).
@@ -57,7 +57,7 @@ Files not received yet: owner to send finished PNG/JPG exports (2160 px). Then a
 - 2026-11-27 — Old Behance work removed from the site; no NDA project; LinkedIn link added; portfolio link added to his LinkedIn.
 
 ## Next steps
-1. Kesar Lane: third image, pop-up stall with dangler and A3 poster (16:9). Owner generates it in ChatGPT; add as `hero` (ai: "ChatGPT") plus to the Visual direction grid.
+1. Kesar Lane: owner continues the campaign (story, packaging + gift tag, bag + card, brand guidelines). Add each to "Brand & social" as it arrives; when the set is done, an overview image becomes the hero.
 2. Suryana: owner rebuilds the slides by hand in PowerPoint (+ the "before" slide); his versions replace the AI ones, with no AI label. Then owner's own designs (slides, posters, in-store kit, motion videos) replace AI images over time; remove `inProgress` when a project is finished.
 3. Owner to update his CV PDF (still lists UI/UX + Figma) and send it to replace `assets/Mahesh-Patil-Resume.pdf`.
 4. 30 s personal brand film (owner's storyboard, revised): scene-by-scene plan in `work/showreel/PLAN.md`. Owner shoots and edits it himself; sends YouTube (Unlisted) link → embed on home page as showreel. Claude will not generate the footage.

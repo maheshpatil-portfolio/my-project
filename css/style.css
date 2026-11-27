@@ -202,7 +202,7 @@ h3 { font-size: 1.25rem; }
 .cs figure img { width: 100%; height: auto; border-radius: var(--radius); border: 1px solid var(--line); background: var(--bg-2); }
 .fig-img { position: relative; }
 .ai-tag {
-  position: absolute; right: .8rem; bottom: .8rem; z-index: 1; font-size: .72rem; font-weight: 600; letter-spacing: .04em;
+  position: absolute; right: .8rem; top: .8rem; z-index: 1; font-size: .72rem; font-weight: 600; letter-spacing: .04em;
   padding: .3rem .65rem; border-radius: 999px; background: rgba(10, 10, 16, .78); color: #fff;
   border: 1px solid rgba(255, 255, 255, .25); backdrop-filter: blur(6px); pointer-events: none;
 }

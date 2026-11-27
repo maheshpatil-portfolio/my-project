@@ -268,13 +268,13 @@ const CASE_STUDIES = [
     inProgress: true,
     summary: "A Diwali gifting campaign for a home-fragrance brand: social, print and motion.",
     categories: ["graphic", "motion"],
-    thumb: "assets/images/concepts/kesar-lane/ai/key-visual.webp",
+    thumb: "assets/images/concepts/kesar-lane/campaign/post-memory.webp",
     thumbAi: true,
     colors: ["#2A1430", "#E8A33D"],
     preview: "",
-    role: "Campaign concept, social design, motion posts, AI-assisted imagery",
+    role: "Logo, social design, layout & type (photos AI-generated)",
     year: "2026",
-    tools: ["Photoshop", "Illustrator", "After Effects", "Midjourney", "Firefly"],
+    tools: ["Illustrator", "Photoshop", "ChatGPT (photos)"],
     deliverables: ["Key visual", "9-post grid", "8-slide carousel", "6 stories", "Festive flyer & poster", "Pop-up stall dangler", "3 motion reels", "9 ad variants", "WhatsApp & email creatives"],
     outcome: "In progress — a 4-week Diwali campaign: 9-post grid, carousel, 6 stories, 3 motion reels and 9 ad variants from one key visual.",
     decisions: [
@@ -284,7 +284,17 @@ const CASE_STUDIES = [
     ],
     sections: [
       {
-        heading: "Visual direction",
+        heading: "Brand & social",
+        layout: "grid",
+        images: [
+          { src: "assets/images/concepts/kesar-lane/campaign/logo.webp", alt: "Kesar Lane logo: a diya flame rising from lotus leaves above a gold serif wordmark on deep plum", caption: "Logo" },
+          { src: "assets/images/concepts/kesar-lane/campaign/post-memory.webp", ai: "ChatGPT", tag: "AI photo · design by Mahesh", alt: "Instagram post: Scent of a memory, a candle in an amber jar with the Kesar Lane label", caption: "Scent of a memory" },
+          { src: "assets/images/concepts/kesar-lane/campaign/post-gifts.webp", ai: "ChatGPT", tag: "AI photo · design by Mahesh", alt: "Instagram post: Gifts that glow, three amber candles, a plum gift box and a brass diya", caption: "Gifts that glow" },
+          { src: "assets/images/concepts/kesar-lane/campaign/post-calm.webp", ai: "ChatGPT", tag: "AI photo · design by Mahesh", alt: "Instagram post: Find your moment of calm, incense sticks in a brass lotus holder", caption: "Moment of calm" },
+        ],
+      },
+      {
+        heading: "Mood images",
         layout: "grid",
         images: [
           { src: "assets/images/concepts/kesar-lane/ai/key-visual.webp", ai: "ChatGPT", alt: "Candle in a glass jar with a brass lid, surrounded by lit clay diyas and marigolds on deep plum fabric", caption: "Key visual" },
@@ -297,7 +307,7 @@ const CASE_STUDIES = [
       },
       {
         heading: "Coming next",
-        list: ["9-post grid", "Flyer & poster", "Pop-up dangler", "3 motion reels"],
+        list: ["Story / WhatsApp status", "Packaging & gift tag", "Bag & thank-you card", "Brand guidelines"],
       },
     ],
   },
