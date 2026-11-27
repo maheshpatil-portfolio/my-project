@@ -17,46 +17,63 @@
   /* ---------- Media helpers ---------- */
   function videoEmbedUrl(url) {
     const yt = url.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/|embed\/)|youtu\.be\/)([\w-]{11})/);
-    if (yt) return `https://www.youtube.com/embed/${yt[1]}?autoplay=1&rel=0`;
+    if (yt) return `https://www.youtube.com/embed/${yt[1]}?rel=0`;
     const vimeo = url.match(/vimeo\.com\/(?:video\/)?(\d+)/);
-    if (vimeo) return `https://player.vimeo.com/video/${vimeo[1]}?autoplay=1`;
+    if (vimeo) return `https://player.vimeo.com/video/${vimeo[1]}`;
+    if (/^https:\/\/www-ccv\.adobe\.io\/v1\/player\//.test(url)) return url; // Behance video embeds
     return null;
   }
   const isVideoFile = (url) => /\.(mp4|webm|mov)(\?|$)/i.test(url);
-  const isVideo = (url) => !!url && (isVideoFile(url) || !!videoEmbedUrl(url));
+  const cats = (p) => [].concat(p.category || []);
+  const hasVideo = (p) => !!(p.videos && p.videos.length) || cats(p).some((c) => c !== "graphic");
 
-  function mediaHtml(url, fallbackColors, label) {
-    if (!url) {
-      const [a, b] = fallbackColors || ["#7b5cff", "#ff4fd8"];
-      return `<div class="placeholder" style="background:linear-gradient(135deg,${a},${b})">
-        Add your ${escapeHtml(label)} in js/data.js</div>`;
-    }
+  function videoHtml(url) {
     const embed = videoEmbedUrl(url);
-    if (embed) return `<div class="video-wrap"><iframe src="${embed}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Video player"></iframe></div>`;
-    if (isVideoFile(url)) return `<div class="video-wrap"><video src="${escapeHtml(url)}" controls autoplay playsinline></video></div>`;
-    return `<img src="${escapeHtml(url)}" alt="">`;
+    if (embed) return `<div class="video-wrap"><iframe src="${escapeHtml(embed)}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy" title="Video player"></iframe></div>`;
+    if (isVideoFile(url)) return `<div class="video-wrap"><video src="${escapeHtml(url)}" controls playsinline preload="metadata"></video></div>`;
+    return "";
   }
+
+  function mediaHtml({ videos = [], images = [], colors, title }) {
+    const parts = [
+      ...videos.map(videoHtml),
+      ...images.map((src) => `<img src="${escapeHtml(src)}" alt="${escapeHtml(title || "")}" loading="lazy">`),
+    ].filter(Boolean);
+    if (parts.length) return `<div class="lb-stack">${parts.join("")}</div>`;
+    const [a, b] = colors || ["#7b5cff", "#ff4fd8"];
+    return `<div class="placeholder" style="background:linear-gradient(135deg,${a},${b})">Add images or a video link in js/data.js</div>`;
+  }
+
+  const tagsHtml = (p) => cats(p).map((c) => `<span class="tag ${escapeHtml(c)}">${CATEGORY_LABELS[c] || escapeHtml(c)}</span>`).join(" ");
 
   /* ---------- Projects ---------- */
   const grid = $("#project-grid");
 
+  // Hide filter buttons that would show nothing.
+  document.querySelectorAll(".filter").forEach((btn) => {
+    const f = btn.dataset.filter;
+    if (f !== "all" && !PROJECTS.some((p) => cats(p).includes(f))) btn.hidden = true;
+  });
+
   function renderProjects(filter = "all") {
-    const list = PROJECTS.filter((p) => filter === "all" || p.category === filter);
+    const list = PROJECTS.filter((p) => filter === "all" || cats(p).includes(filter));
     grid.innerHTML = list.map((p, i) => {
       const index = PROJECTS.indexOf(p);
       const [a, b] = p.colors || ["#7b5cff", "#ff4fd8"];
       const initials = p.title.split(/\s+/).filter((w) => /^[A-Za-z0-9]/.test(w)).slice(0, 2).map((w) => w[0]).join("");
       const thumb = p.thumb
-        ? `<img src="${escapeHtml(p.thumb)}" alt="${escapeHtml(p.title)}" loading="lazy">`
+        ? `<img src="${escapeHtml(p.thumb)}" alt="${escapeHtml(p.title)}" loading="lazy"${p.thumbPosition ? ` style="object-position:${escapeHtml(p.thumbPosition)}"` : ""}>`
         : `<div class="placeholder" style="background:linear-gradient(135deg,${a},${b})">${escapeHtml(initials)}</div>`;
-      const play = (p.category !== "graphic" || isVideo(p.media)) ? `<span class="play" aria-hidden="true">▶</span>` : "";
+      const play = hasVideo(p) ? `<span class="play" aria-hidden="true">▶</span>` : "";
+      const count = p.gallery && p.gallery.length > 1 ? `<span class="count">${p.gallery.length} images</span>` : "";
+      const sub = [p.client, p.year].filter(Boolean).join(" · ");
       return `
         <button class="card" data-index="${index}" style="animation-delay:${i * 60}ms">
-          <div class="card-thumb">${thumb}${play}</div>
+          <div class="card-thumb">${thumb}${play}${count}</div>
           <div class="card-body">
-            <span class="tag ${p.category}">${CATEGORY_LABELS[p.category] || p.category}</span>
+            ${tagsHtml(p)}
             <h3>${escapeHtml(p.title)}</h3>
-            <p>${escapeHtml(p.client || "")}${p.year ? " · " + p.year : ""}</p>
+            ${sub ? `<p>${escapeHtml(sub)}</p>` : ""}
           </div>
         </button>`;
     }).join("");
@@ -79,26 +96,33 @@
   const lb = $("#lightbox");
   let lastFocus = null;
 
-  function openLightbox({ media, colors, label, category, title, desc, meta }) {
+  function openLightbox({ html, tags, title, desc, meta, link }) {
     lastFocus = document.activeElement;
-    $("#lb-media").innerHTML = mediaHtml(media, colors, label);
+    $("#lb-media").innerHTML = html;
     const cat = $("#lb-cat");
-    cat.textContent = CATEGORY_LABELS[category] || "";
-    cat.className = `tag ${category || ""}`;
-    cat.hidden = !category;
+    cat.innerHTML = tags || "";
+    cat.hidden = !tags;
     $("#lb-title").textContent = title || "";
     $("#lb-desc").textContent = desc || "";
     $("#lb-meta").textContent = meta || "";
+    const a = $("#lb-link");
+    a.hidden = !link;
+    if (link) a.href = link;
     lb.hidden = false;
+    lb.querySelector(".lb-inner").scrollTop = 0;
     document.body.style.overflow = "hidden";
     $(".lb-close").focus();
   }
 
   function openProject(p) {
-    const meta = [p.client && `Client: ${p.client}`, p.year, p.tools && p.tools.length && `Tools: ${p.tools.join(", ")}`]
+    const meta = [p.client, p.year, p.tools && p.tools.length && `Tools: ${p.tools.join(", ")}`]
       .filter(Boolean).join("  ·  ");
-    const label = p.category === "graphic" && !isVideo(p.media) ? "image" : "video";
-    openLightbox({ media: p.media || p.thumb, colors: p.colors, label, category: p.category, title: p.title, desc: p.description, meta });
+    const images = p.gallery && p.gallery.length ? p.gallery : (p.media && !videoEmbedUrl(p.media) && !isVideoFile(p.media) ? [p.media] : (p.thumb ? [p.thumb] : []));
+    const videos = p.videos || (p.media && (videoEmbedUrl(p.media) || isVideoFile(p.media)) ? [p.media] : []);
+    openLightbox({
+      html: mediaHtml({ videos, images: videos.length ? [] : images, colors: p.colors, title: p.title }),
+      tags: tagsHtml(p), title: p.title, desc: p.description, meta, link: p.link,
+    });
   }
 
   function closeLightbox() {
@@ -116,7 +140,7 @@
   const reelBtn = $("#showreel-btn");
   if (SITE.showreel) {
     reelBtn.hidden = false;
-    reelBtn.addEventListener("click", () => openLightbox({ media: SITE.showreel, label: "showreel", title: "Showreel", desc: SITE.role }));
+    reelBtn.addEventListener("click", () => openLightbox({ html: mediaHtml({ videos: [SITE.showreel] }), title: "Showreel", desc: SITE.role }));
   }
 
   /* ---------- Résumé ---------- */

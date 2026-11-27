@@ -120,13 +120,18 @@ h3 { font-size: 1.25rem; }
   position: relative; border-radius: var(--radius); overflow: hidden;
   background: var(--card); border: 1px solid var(--line);
   cursor: pointer; text-align: left; color: inherit; padding: 0;
+  display: flex; flex-direction: column; justify-content: flex-start; font: inherit;
   transition: transform .3s, border-color .3s;
   animation: fadeIn .5s both;
 }
 .card:hover { transform: translateY(-6px); border-color: var(--accent); }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } }
 .card-thumb { position: relative; aspect-ratio: 4 / 3; overflow: hidden; }
-.card-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
+.card-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform .6s; }
+.count {
+  position: absolute; left: 1rem; bottom: 1rem; padding: .3rem .7rem; border-radius: 999px;
+  background: rgba(0,0,0,.6); backdrop-filter: blur(6px); color: #fff; font-size: .8rem; font-weight: 500;
+}
 .card:hover .card-thumb img, .card:hover .placeholder { transform: scale(1.06); }
 .placeholder {
   width: 100%; height: 100%;
@@ -140,6 +145,7 @@ h3 { font-size: 1.25rem; }
   display: grid; place-items: center;
   background: rgba(0,0,0,.55); backdrop-filter: blur(6px); color: #fff; font-size: .95rem;
 }
+.card-thumb { width: 100%; flex: none; }
 .card-body { padding: 1.2rem 1.3rem 1.4rem; }
 .card-body h3 { font-size: 1.1rem; margin: .5rem 0 .25rem; }
 .card-body p { color: var(--muted); font-size: .9rem; }
@@ -228,14 +234,17 @@ h3 { font-size: 1.25rem; }
   background: rgba(0,0,0,.6); color: #fff; font-size: 1rem;
 }
 .lb-media { background: #000; }
-.lb-media img { width: 100%; max-height: 70vh; object-fit: contain; }
+.lb-stack { display: grid; gap: 4px; }
+.lb-stack img { width: 100%; height: auto; }
 .lb-media .video-wrap { position: relative; aspect-ratio: 16 / 9; }
 .lb-media .video-wrap iframe, .lb-media .video-wrap video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 .lb-media .placeholder { aspect-ratio: 16 / 9; height: auto; font-size: 1.1rem; font-weight: 500; text-align: center; padding: 2rem; }
-.lb-info { padding: 1.5rem 1.8rem 2rem; }
+.lb-info { padding: 1.6rem 4.5rem 1.6rem 1.8rem; }
 .lb-info h3 { font-size: 1.6rem; margin: .7rem 0 .5rem; }
 .lb-info p { color: var(--muted); }
 .lb-meta { margin-top: .8rem; font-size: .9rem; }
+.lb-tags { display: flex; gap: .4rem; flex-wrap: wrap; }
+.lb-link { margin-top: 1.2rem; }
 
 /* Scroll reveal */
 .reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s, transform .8s; }

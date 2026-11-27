@@ -17,14 +17,16 @@ A fast, dark, modern portfolio site. Plain HTML/CSS/JavaScript — no build step
 ```js
 {
   title: "My Project",
-  category: "graphic",            // "graphic", "video" or "motion"
-  year: 2026,
+  category: "graphic",              // "graphic", "video", "motion" — or a list: ["motion", "video"]
   client: "Client name",
-  tools: ["After Effects"],
+  tools: ["Illustrator"],
   description: "One or two lines about the project.",
-  thumb: "assets/images/my-project.jpg",   // cover image on the card
-  media: "https://youtu.be/XXXXXXXXXXX",   // what opens on click: image, YouTube/Vimeo link, or .mp4
-  colors: ["#7b5cff", "#ff4fd8"],          // placeholder colors if no thumb
+  thumb: "assets/images/my-project/cover.webp",   // card image
+  gallery: [                                     // images shown when the card is opened
+    "assets/images/my-project/01.webp",
+  ],
+  videos: ["https://youtu.be/XXXXXXXXXXX"],      // optional: YouTube / Vimeo / Behance video embeds
+  link: "https://www.behance.net/gallery/...",   // optional "View on Behance" button
 },
 ```
 
