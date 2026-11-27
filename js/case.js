@@ -35,7 +35,7 @@
     // ai: "ChatGPT" (or true) marks an AI-generated image: adds a tag + an honest default caption.
     const tool = o.ai === true ? "AI" : o.ai;
     const caption = o.caption || "";
-    return `<figure class="${o.ai ? "is-ai" : ""}"><div class="fig-img"><img src="${esc(o.src)}" alt="${esc(o.alt || alt)}" loading="lazy">${o.ai ? `<span class="ai-tag">AI concept · ${esc(tool)}</span>` : ""}</div>${caption ? `<figcaption>${esc(caption)}</figcaption>` : ""}</figure>`;
+    return `<figure class="${o.ai ? "is-ai" : ""}"><div class="fig-img"><img src="${esc(o.src)}" alt="${esc(o.alt || alt)}" loading="lazy">${o.ai ? `<span class="ai-tag">${esc(o.tag || `AI concept · ${tool}`)}</span>` : ""}</div>${caption ? `<figcaption>${esc(caption)}</figcaption>` : ""}</figure>`;
   }
   const paras = (t) => [].concat(t || []).map((p) => `<p>${esc(p)}</p>`).join("");
 

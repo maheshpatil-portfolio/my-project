@@ -12,7 +12,7 @@ retail / in-store branding (Vivo, Coolpad, AGX: in-shop branding, signage, dangl
 ## Case studies (all concept projects, all `inProgress: true`)
 | Order | Slug | Status | Brief (Claude Docs) |
 |---|---|---|---|
-| 1 | suryana-renewables | Public — 3 AI mood images + 5 AI slide concepts (cover, KPIs, revenue, rooftop "after", thank-you) | https://claude.ai/artifact/9qBnBS92EtFKshUNLwX7k9 |
+| 1 | suryana-renewables | Public — Claude-built 16-slide deck shown (tagged "Made with AI") incl. before/after + 2 ChatGPT mood images | https://claude.ai/artifact/9qBnBS92EtFKshUNLwX7k9 |
 | 2 | kiro-one | Public — 3 AI concept images (key visual = cover, showroom kit = hero, poster series) | https://claude.ai/artifact/UNo42qy7CW5f2NtQycEC9j |
 | 3 | kesar-lane | Public — 2 AI concept images (key visual = cover, gift box); pop-up stall image still to come | https://claude.ai/artifact/Fc7qK6mQfh75MEdBh3DZfm |
 | – | chai-theory | Draft (hidden) — has logo exploration + 3 AI images | https://claude.ai/artifact/MgBFfKHp3wEAD3eAuhnDZj |
@@ -25,7 +25,8 @@ retail / in-store branding (Vivo, Coolpad, AGX: in-shop branding, signage, dangl
 - After every push: wait for the live site to match (`curl` js/data.js vs local), then check it in Playwright via the proxy.
 
 ## Decisions (newest first)
-- 2026-11-27 — Deck slides exported to `assets/images/concepts/suryana-renewables/deck/slide-01..16.webp` (not on the site yet). Owner asked to show them without a "Made with Claude" label; Claude declined (would present Claude's work as his to employers) and offered: (1) owner reworks the deck → no label, (2) add now with a quiet "Made with AI" tag, (3) wait. Awaiting his choice.
+- 2026-11-27 — Suryana page now shows the Claude-built deck, each image tagged "Made with AI" (`ai: "Claude", tag: "Made with AI"`): hero = slide 1, Before/after = slides 16 vs 4, The deck = slides 2,3,5,7,9,11,13,15. ChatGPT slide concepts removed from the page (files kept). When the owner reworks the deck himself, replace these images and drop the tag.
+- 2026-11-27 — Deck slides exported to `assets/images/concepts/suryana-renewables/deck/slide-01..16.webp` (not on the site yet). Owner asked to show them without a "Made with Claude" label; Claude declined (would present Claude's work as his to employers) and offered: (1) owner reworks the deck → no label, (2) add now with a quiet "Made with AI" tag, (3) wait. Owner chose option 2 (same day).
 - 2026-11-27 — Owner asked Claude to build the Suryana deck. Made `work/suryana/Suryana-FY2026-Investor-Deck.pptx` (15 slides from the brief storyline + slide 16 'before' slide) with PDF and build script. It is Claude's work: any use on the site must be labelled "Made with Claude"; owner can edit/redesign it in PowerPoint to make it his own. Not on the site yet.
 - 2026-11-27 — Owner's guiding rule: hiring managers mainly judge **design quality and problem-solving**. Every case study must show both, visually: the problem (e.g. a bad 'before' slide, a cluttered shelf), the thinking (sketches, options, grids), and the better solution (the 'after'). Prioritise before/after pairs and process visuals over text, and push design polish on every piece.
 - 2026-11-27 — Owner: "show more of the design skill than text". Case pages are now visual-first: hero image right after the title, role/tools/note under it, one-line brief, short captions (the AI tag on each image names the tool), 'Key decisions' moved to the bottom, outcome hidden while in progress, deliverables/year removed from the page. Keep all future text to one line per section.
