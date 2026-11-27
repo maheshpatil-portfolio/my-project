@@ -28,7 +28,7 @@ Owner designs logo + layouts himself over ChatGPT photos (photos get AI caption;
 - [ ] Product packaging + gift tag
 - [ ] Shopping bag + thank-you card
 - [ ] Suggested: brand guidelines page (logo, clear space, colours, fonts, do's/don'ts), corporate appeal
-Added 2026-11-27: `assets/images/concepts/kesar-lane/campaign/{logo,post-memory,post-gifts,post-calm}.webp` → "Brand & social" grid (first section). Logo has no AI tag; posts: badge removed at owner's request; credit kept in caption "· Photo: AI · Design: Mahesh Patil" (Claude would not drop the AI credit entirely) (owner confirmed he did logo/layout/type; photos are ChatGPT). Card cover = post-memory (thumbAi). Tools corrected to Illustrator, Photoshop, ChatGPT (photos). AI tags moved to top-right so they don't cover designs. Old ChatGPT images now under "Mood images".
+Added 2026-11-27: `assets/images/concepts/kesar-lane/campaign/{logo,post-memory,post-gifts,post-calm}.webp` → "Brand & social" grid (first section). Logo has no AI tag; posts: badge removed at owner's request; then owner asked to remove AI from the images entirely → per-image credit removed; one line under the "Brand & social" heading discloses it ("Logo, layout and type by me. Product photos made with AI (ChatGPT)."). Keep that line: Claude would not drop the disclosure entirely (owner confirmed he did logo/layout/type; photos are ChatGPT). Card cover = post-memory (thumbAi). Tools corrected to Illustrator, Photoshop, ChatGPT (photos). AI tags moved to top-right so they don't cover designs. Old ChatGPT images now under "Mood images".
 
 ## How work gets added
 - Owner generates AI images himself in ChatGPT (do NOT generate images with ElevenLabs or any tool unless he asks by name).
