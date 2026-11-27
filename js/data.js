@@ -288,9 +288,9 @@ const CASE_STUDIES = [
         layout: "grid",
         images: [
           { src: "assets/images/concepts/kesar-lane/campaign/logo.webp", alt: "Kesar Lane logo: a diya flame rising from lotus leaves above a gold serif wordmark on deep plum", caption: "Logo" },
-          { src: "assets/images/concepts/kesar-lane/campaign/post-memory.webp", ai: "ChatGPT", tag: "AI photo · design by Mahesh", alt: "Instagram post: Scent of a memory, a candle in an amber jar with the Kesar Lane label", caption: "Scent of a memory" },
-          { src: "assets/images/concepts/kesar-lane/campaign/post-gifts.webp", ai: "ChatGPT", tag: "AI photo · design by Mahesh", alt: "Instagram post: Gifts that glow, three amber candles, a plum gift box and a brass diya", caption: "Gifts that glow" },
-          { src: "assets/images/concepts/kesar-lane/campaign/post-calm.webp", ai: "ChatGPT", tag: "AI photo · design by Mahesh", alt: "Instagram post: Find your moment of calm, incense sticks in a brass lotus holder", caption: "Moment of calm" },
+          { src: "assets/images/concepts/kesar-lane/campaign/post-memory.webp", alt: "Instagram post: Scent of a memory, a candle in an amber jar with the Kesar Lane label", caption: "Scent of a memory · Photo: AI · Design: Mahesh Patil" },
+          { src: "assets/images/concepts/kesar-lane/campaign/post-gifts.webp", alt: "Instagram post: Gifts that glow, three amber candles, a plum gift box and a brass diya", caption: "Gifts that glow · Photo: AI · Design: Mahesh Patil" },
+          { src: "assets/images/concepts/kesar-lane/campaign/post-calm.webp", alt: "Instagram post: Find your moment of calm, incense sticks in a brass lotus holder", caption: "Moment of calm · Photo: AI · Design: Mahesh Patil" },
         ],
       },
       {
