@@ -296,7 +296,8 @@ const CASE_STUDIES = [
     slug: "kiro-one",
     title: "Kiro One",
     concept: true,
-    draft: true,
+    draft: false,
+    inProgress: true,
     summary: "Launch film for an electric scooter: a 30-second hero film, kinetic-type feature film, colour grade and social cutdowns.",
     categories: ["video", "motion"],
     thumb: "",
@@ -319,6 +320,16 @@ const CASE_STUDIES = [
       { heading: "The insight", text: [
         "In Indian cities, the commute is the part of the day you don't control. Kiro One gives it back: \"Own the city.\"",
       ] },
+      {
+        heading: "Coming next",
+        text: ["This case study is being built in public. Next up:"],
+        list: [
+          "Style frames, title design and the spec typography system",
+          "30-second launch film and 20-second kinetic-type feature film",
+          "Colour grade before/after",
+          "15-second and 6-second cutdowns, teasers, thumbnail and end card",
+        ],
+      },
     ],
   },
   {
