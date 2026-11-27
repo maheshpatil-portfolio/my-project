@@ -151,6 +151,7 @@
           <div class="cs-card-badges">
             ${c.concept ? `<span class="badge concept">Concept project</span>` : ""}
             ${c.draft ? `<span class="badge draft">Draft</span>` : ""}
+            ${c.inProgress ? `<span class="badge wip">In progress</span>` : ""}
           </div>
         </div>
         <div class="cs-card-body">

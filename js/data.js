@@ -144,6 +144,7 @@ const SITE = {
    CASE STUDIES — big projects with their own page (project.html?p=<slug>)
    concept: true   → shows a "Concept project" badge + a note that the brand is fictional
    draft:   true   → hidden on the live site; preview with  index.html?preview
+   inProgress: true → public, with an "In progress" badge
    sections: each has heading, text (string or list of paragraphs), optional
              list (bullets), images (path or { src, caption }), layout: "grid"
              for 2 columns, and videos (YouTube / Vimeo links)
@@ -153,7 +154,8 @@ const CASE_STUDIES = [
     slug: "chai-theory",
     title: "Chai Theory",
     concept: true,
-    draft: true,
+    draft: false,
+    inProgress: true,   // shows an "In progress" badge; remove when the project is finished
     summary: "A 360° launch for a modern Indian chai brand: identity, packaging, campaign, launch film and motion.",
     categories: ["graphic", "motion", "video"],
     thumb: "assets/images/concepts/chai-theory/process/logo-exploration-r1.webp",
@@ -190,12 +192,22 @@ const CASE_STUDIES = [
         heading: "Logo exploration",
         text: [
           "Three routes explored with quick vector studies and AI-assisted ideation: the θ cup (theta, the symbol for theory, as a cutting-chai glass), the kulhad, and steam that asks a question.",
-          "Shortlist: the cutting-chai glass inside a serif θ, and the θ bar breaking out of the glass. Final mark in progress.",
+          "Shortlist: the cutting-chai glass inside a serif θ, and the θ bar breaking out of the glass. The final mark is being designed and refined by hand in Illustrator.",
         ],
         layout: "grid",
         images: [
-          { src: "assets/images/concepts/chai-theory/process/logo-exploration-r1.webp", caption: "Round 1 — vector studies for three routes" },
-          { src: "assets/images/concepts/chai-theory/process/logo-ai-exploration-chatgpt.webp", caption: "AI-assisted ideation (ChatGPT), used for exploration only" },
+          { src: "assets/images/concepts/chai-theory/process/logo-exploration-r1.webp", caption: "Round 1 — quick vector studies of three routes, generated with AI assistance (Claude) as a starting point" },
+          { src: "assets/images/concepts/chai-theory/process/logo-ai-exploration-chatgpt.webp", caption: "AI ideation (ChatGPT), used for exploration only" },
+        ],
+      },
+      {
+        heading: "Coming next",
+        text: ["This case study is being built in public. Next up:"],
+        list: [
+          "Final logo, lockups and brand guidelines",
+          "Packaging range for five blends",
+          "Launch deck and social campaign",
+          "20-second launch film and logo animation",
         ],
       },
     ],

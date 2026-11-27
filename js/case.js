@@ -67,13 +67,14 @@
         <div class="cs-badges">
           ${c.concept ? `<span class="badge concept">Concept project</span>` : ""}
           ${c.draft ? `<span class="badge draft">Draft — hidden from the live site</span>` : ""}
+          ${c.inProgress ? `<span class="badge wip">In progress</span>` : ""}
           ${[].concat(c.categories || []).map((k) => `<span class="tag ${esc(k)}">${LABELS[k] || esc(k)}</span>`).join("")}
         </div>
         <h1>${esc(c.title)}</h1>
         <p class="cs-summary">${esc(c.summary)}</p>
         ${meta.length ? `<dl class="cs-meta">${meta.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>` : ""}
         ${c.outcome ? `<div class="cs-outcome"><span>Outcome</span><p>${esc(c.outcome)}</p></div>` : ""}
-        ${c.concept ? `<p class="cs-note">Self-initiated concept project. The brand, products and figures are fictional; all design, motion and editing by ${esc(SITE.name)}.</p>` : ""}
+        ${c.concept ? `<p class="cs-note">Self-initiated concept project. The brand, products and figures are fictional. Final design, motion and editing by ${esc(SITE.name)}; any AI-assisted exploration is labelled where it appears.</p>` : ""}
       </header>
       ${(c.decisions || []).length ? `
         <section class="section cs-decisions">
