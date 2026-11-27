@@ -256,7 +256,8 @@ const CASE_STUDIES = [
     slug: "thoda",
     title: "Thoda",
     concept: true,
-    draft: true,
+    draft: false,
+    inProgress: true,
     summary: "Launch kit for a savings app that rounds up UPI payments: brand, app screens and a 45-second animated explainer.",
     categories: ["motion", "graphic"],
     thumb: "",
@@ -279,6 +280,16 @@ const CASE_STUDIES = [
       { heading: "The insight", text: [
         "Nobody misses ₹3. Saving fails when it feels like a sacrifice; Thoda makes it invisible — the change from a chai.",
       ] },
+      {
+        heading: "Coming next",
+        text: ["This case study is being built in public. Next up:"],
+        list: [
+          "Logo, app icon and the Sikka character sheet",
+          "Eight key app screens and app-store screenshots",
+          "Storyboard, style frames and the 45-second animated explainer",
+          "UI micro-interactions and animated social posts",
+        ],
+      },
     ],
   },
   {
