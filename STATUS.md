@@ -24,6 +24,14 @@ retail / in-store branding (Vivo, Coolpad, AGX: in-shop branding, signage, dangl
 - Images: optimise to WebP ≤1600 px into `assets/images/concepts/<slug>/ai/`, add a "Visual direction" section, set the best as `thumb` + `hero`.
 - After every push: wait for the live site to match (`curl` js/data.js vs local), then check it in Playwright via the proxy.
 
+## Decisions (newest first)
+- 2026-11-27 — Rule: STATUS.md is the handoff file; every session reads it first and updates it after each change.
+- 2026-11-27 — Focus on 3 case studies (Suryana, Kiro One, Kesar Lane) based on India job-market research; Chai Theory and Thoda hidden as drafts.
+- 2026-11-27 — Kiro One = 360° product launch (key visual, posters/flyers, in-store POSM kit, social, motion video). Kesar Lane adds flyer, poster, pop-up dangler. Suryana's film = "motion summary video".
+- 2026-11-27 — Title: "Graphic Designer & Motion Graphics Editor · 10+ yrs". No UI/UX anywhere (UI/UX certificate and Figma removed from site). Video editing only tagged once a finished edit exists.
+- 2026-11-27 — Owner generates AI images himself (ChatGPT). Never generate images for him unless he asks by name. All AI images labelled "AI concept".
+- 2026-11-27 — Old Behance work removed from the site; no NDA project; LinkedIn link added; portfolio link added to his LinkedIn.
+
 ## Next steps
 1. Kiro One images (prompts: product hero shot, city ride at blue hour, detail close-ups — or retail/standee mockups).
 2. Kesar Lane images (candle among diyas, gift-box flat lay, hands lighting a diya).
