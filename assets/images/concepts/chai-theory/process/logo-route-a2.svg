@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="40 0 120 182" width="480" height="728">
+  <!-- Chai Theory · Route A2 "θ cutting-chai glass" · rough concept, redraw in Illustrator -->
+  <defs><clipPath id="glass"><path d="M62 62 L138 62 L128 170 Q100 178 72 170 Z"/></clipPath></defs>
+  <rect x="40" y="114" width="120" height="70" fill="#B0643C" clip-path="url(#glass)"/>
+  <g stroke="#3B2416" stroke-opacity=".25" stroke-width="3"><line x1="80" y1="66" x2="84" y2="168"/><line x1="100" y1="66" x2="100" y2="172"/><line x1="120" y1="66" x2="116" y2="168"/></g>
+  <path d="M62 62 L138 62 L128 170 Q100 178 72 170 Z" fill="none" stroke="#3B2416" stroke-width="8" stroke-linejoin="round"/>
+  <line x1="46" y1="114" x2="154" y2="114" stroke="#3B2416" stroke-width="9" stroke-linecap="round"/>
+  <path d="M100 52 c-10-8 10-16 0-26 c-7-7 3-12 0-18" fill="none" stroke="#3B2416" stroke-width="6" stroke-linecap="round"/>
+</svg>
