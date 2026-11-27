@@ -15,7 +15,6 @@
     <a href="#top" class="logo" data-site="name">Mahesh Patil</a>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">Menu</button>
     <nav class="nav-links">
-      <a href="#contents">Contents</a>
       <a href="#case-studies" id="nav-cs" hidden>Work</a>
       <a href="#work">More work</a>
       <a href="#experience">Experience</a>
@@ -25,16 +24,11 @@
   </header>
 
   <main id="top">
-    <!-- COVER (dark) -->
+    <!-- INTRO (dark band) -->
     <section class="band dark hero">
       <div class="wrap">
-        <div class="frame hero-frame">
-          <p class="hero-kicker">Graphic Design <span>&amp; Motion</span></p>
-          <h1 class="hero-word" aria-label="Portfolio"><span class="hw">Portf</span><span class="orb" aria-hidden="true"></span><span class="hw">lio</span></h1>
-          <span class="script hero-sign" data-site="name"></span>
-          <i class="hd tl"></i><i class="hd tc"></i><i class="hd tr"></i><i class="hd bl"></i><i class="hd bc"></i><i class="hd br"></i><svg class="move-cursor" viewBox="0 0 40 40" aria-hidden="true"><path d="M4 2l12 30 3-11 11-3z" /><path d="M30 22v14M23 29h14M30 22l-3 3M30 22l3 3M30 36l-3-3M30 36l3-3M23 29l3-3M23 29l3 3M37 29l-3-3M37 29l-3 3" fill="none"/></svg>
-        </div>
-        <p class="hero-role"><span data-site="role"></span></p>
+        <p class="hello">Hello! I am</p>
+        <h1 class="hero-name"><span data-site="name"></span><span class="script hero-script" id="hero-script"></span></h1>
         <p class="hero-tagline" data-site="tagline"></p>
         <dl class="hero-facts">
           <div><dt>Based in</dt><dd data-site="location"></dd></div>
@@ -43,7 +37,6 @@
           <div class="hero-links">
             <dt>Get in touch</dt>
             <dd>
-              <a href="#case-studies" class="link">View work</a>
               <a href="#contact" class="link">Contact</a>
               <a class="link" id="resume-btn" href="#" download hidden>Résumé (PDF)</a>
               <button class="link" id="showreel-btn" hidden>Showreel</button>
@@ -54,17 +47,6 @@
         <div class="brands" id="brands" hidden>
           <p class="label">Worked with</p>
           <ul class="brands-list" id="brands-list"></ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- TABLE OF CONTENTS -->
-    <section id="contents" class="band">
-      <div class="wrap">
-        <div class="toc-title"><span class="script">Table of</span><h2>Contents</h2></div>
-        <div class="frame frame-light">
-          <ol class="toc" id="toc"></ol>
-          <i class="hd tl"></i><i class="hd tc"></i><i class="hd tr"></i><i class="hd bl"></i><i class="hd bc"></i><i class="hd br"></i><svg class="move-cursor" viewBox="0 0 40 40" aria-hidden="true"><path d="M4 2l12 30 3-11 11-3z" /><path d="M30 22v14M23 29h14M30 22l-3 3M30 22l3 3M30 36l-3-3M30 36l3-3M23 29l3-3M23 29l3 3M37 29l-3-3M37 29l-3 3" fill="none"/></svg>
         </div>
       </div>
     </section>
@@ -83,15 +65,11 @@
     </section>
 
     <!-- CASE STUDIES -->
-    <section id="case-studies" hidden>
-      <div class="band dark divider">
-        <div class="wrap">
-          <div class="frame divider-frame"><h2>Selected Work</h2><i class="hd tl"></i><i class="hd tc"></i><i class="hd tr"></i><i class="hd bl"></i><i class="hd bc"></i><i class="hd br"></i><svg class="move-cursor" viewBox="0 0 40 40" aria-hidden="true"><path d="M4 2l12 30 3-11 11-3z" /><path d="M30 22v14M23 29h14M30 22l-3 3M30 22l3 3M30 36l-3-3M30 36l3-3M23 29l3-3M23 29l3 3M37 29l-3-3M37 29l-3 3" fill="none"/></svg></div>
-          <p class="divider-note">Three projects, from the brief to the final work.</p>
-        </div>
-      </div>
-      <div class="band">
-        <div class="wrap"><div class="cs-list" id="cs-grid"></div></div>
+    <section id="case-studies" class="band" hidden>
+      <div class="wrap">
+        <div class="title-block"><h2>Selected</h2><span class="script">Work</span></div>
+        <p class="section-note">Three projects, from brief to final work.</p>
+        <div class="cs-list" id="cs-grid"></div>
       </div>
     </section>
 
@@ -139,12 +117,7 @@
     <!-- ABOUT -->
     <section id="about" class="band">
       <div class="wrap">
-        <div class="hello-block">
-          <h2>Hello!</h2>
-          <p class="hello-name">I am <span data-site="name"></span>.</p>
-          <span class="script about-note">About me</span>
-          <svg class="about-arrow" viewBox="0 0 60 90" aria-hidden="true"><path d="M30 4c14 8 14 20 2 26s-12 18 4 24M36 54l-2 22m0 0l-10-12m10 12l10-10"/></svg>
-        </div>
+        <div class="title-block"><h2>About</h2><span class="script">me</span></div>
         <div class="about">
           <div class="about-text" id="about-text"></div>
           <aside class="about-side">
@@ -156,17 +129,10 @@
       </div>
     </section>
 
-    <!-- CONTACT (dark) -->
+    <!-- CONTACT (dark band) -->
     <section id="contact" class="band dark contact">
       <div class="wrap">
-        <div class="frame thanks-frame">
-          <span class="script thanks-script">Let's work<br>together</span>
-          <svg class="thanks-arrow" viewBox="0 0 90 70" aria-hidden="true"><path d="M70 64C30 66 6 46 20 14m0 0l-8 12m8-12l12 8"/></svg>
-          <h2>Thanks for scrolling!</h2>
-          <span class="tool-badge ps" aria-hidden="true">Ps</span>
-          <span class="tool-badge ae" aria-hidden="true">Ae</span>
-          <i class="hd tl"></i><i class="hd tc"></i><i class="hd tr"></i><i class="hd bl"></i><i class="hd bc"></i><i class="hd br"></i><svg class="move-cursor" viewBox="0 0 40 40" aria-hidden="true"><path d="M4 2l12 30 3-11 11-3z" /><path d="M30 22v14M23 29h14M30 22l-3 3M30 22l3 3M30 36l-3-3M30 36l3-3M23 29l3-3M23 29l3 3M37 29l-3-3M37 29l-3 3" fill="none"/></svg>
-        </div>
+        <div class="title-block center"><h2>Let's work</h2><span class="script">Together</span></div>
         <p class="contact-note">Hiring for a design or motion role? I'd love to hear about your team.</p>
         <a class="email" id="email-link" href="#"></a>
         <ul class="contact-links">
