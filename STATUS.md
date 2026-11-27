@@ -20,6 +20,16 @@ retail / in-store branding (Vivo, Coolpad, AGX: in-shop branding, signage, dangl
 | – | chai-theory | Draft (hidden) — has logo exploration + 3 AI images | https://claude.ai/artifact/MgBFfKHp3wEAD3eAuhnDZj |
 | – | thoda | Draft (hidden) — has 3 AI images | https://claude.ai/artifact/LmpohDK2MnkpqqVnxzwcRN |
 
+## Kesar Lane: owner's own campaign (in progress, 2026-11-27)
+Owner designs logo + layouts himself over ChatGPT photos (photos get AI caption; logo/layout/type are his, no AI tag).
+- [x] Brand logo (diya flame + lotus leaves, serif wordmark, "HOME FRAGRANCES")
+- [x] Instagram carousel, 3 slides
+- [ ] Instagram Story / WhatsApp status
+- [ ] Product packaging + gift tag
+- [ ] Shopping bag + thank-you card
+- [ ] Suggested: brand guidelines page (logo, clear space, colours, fonts, do's/don'ts), corporate appeal
+Files not received yet: owner to send finished PNG/JPG exports (2160 px). Then add to the kesar-lane page: new "Brand & campaign" section first; caption posts "Photo: AI (ChatGPT) · Logo, layout and type: Mahesh Patil".
+
 ## How work gets added
 - Owner generates AI images himself in ChatGPT (do NOT generate images with ElevenLabs or any tool unless he asks by name).
 - Every AI image gets `ai: "ChatGPT"` (section image) or `thumbAi: true` (card cover) → "AI concept" tag + honest caption.
