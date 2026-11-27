@@ -12,7 +12,6 @@
     if (value) el.textContent = value;
   });
   document.title = `${SITE.name} — ${SITE.role}`;
-  if (SITE.heroScript) $("#hero-script").textContent = SITE.heroScript;
   $("#year").textContent = new Date().getFullYear();
 
   /* ---------- Media helpers ---------- */
@@ -201,6 +200,18 @@
       ol.hidden = false;
     }
   }
+
+  /* ---------- Table of contents ---------- */
+  const tocItems = [
+    ...studies.map((c) => ({ title: c.title, script: c.scriptLabel, href: `project.html?p=${encodeURIComponent(c.slug)}${preview ? "&preview" : ""}` })),
+    ...(SITE.contents || []),
+  ];
+  $("#toc").innerHTML = tocItems.map((t, i) => `
+    <li><a href="${escapeHtml(t.href)}">
+      <span class="toc-num" aria-hidden="true">${String(i + 1).padStart(2, "0")}</span>
+      <span class="toc-word">${escapeHtml(t.title)}</span>
+      ${t.script ? `<span class="script toc-script">${escapeHtml(t.script)}</span>` : ""}
+    </a></li>`).join("");
 
   /* ---------- Brands ---------- */
   if ((SITE.brands || []).length) {

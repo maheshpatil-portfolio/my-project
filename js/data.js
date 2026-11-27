@@ -6,8 +6,12 @@
 const SITE = {
   name: "Mahesh Patil",
   role: "Graphic Designer & Motion Graphics Editor · 10+ yrs",
-  // Handwritten script line under the name in the intro.
-  heroScript: "Designer & Motion Editor",
+  // Table of contents on the home page: case studies come first automatically, then these.
+  contents: [
+    { title: "What I", script: "Do", href: "#services" },
+    { title: "Experience", script: "10+ years", href: "#experience" },
+    { title: "About", script: "me", href: "#about" },
+  ],
   tagline: "I build brand systems, campaigns, presentations and motion that stay consistent from the first sketch to the final frame.",
   location: "Hyderabad, India",
   email: "maheshpatil1@hotmail.com",
