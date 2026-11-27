@@ -32,7 +32,10 @@
   }
   function figure(img, alt) {
     const o = typeof img === "string" ? { src: img } : img;
-    return `<figure><img src="${esc(o.src)}" alt="${esc(o.alt || alt)}" loading="lazy">${o.caption ? `<figcaption>${esc(o.caption)}</figcaption>` : ""}</figure>`;
+    // ai: "ChatGPT" (or true) marks an AI-generated image: adds a tag + an honest default caption.
+    const tool = o.ai === true ? "AI" : o.ai;
+    const caption = o.caption || (o.ai ? `AI-generated concept (${tool}). Final design in progress by ${SITE.name}.` : "");
+    return `<figure class="${o.ai ? "is-ai" : ""}"><div class="fig-img"><img src="${esc(o.src)}" alt="${esc(o.alt || alt)}" loading="lazy">${o.ai ? `<span class="ai-tag">AI concept</span>` : ""}</div>${caption ? `<figcaption>${esc(caption)}</figcaption>` : ""}</figure>`;
   }
   const paras = (t) => [].concat(t || []).map((p) => `<p>${esc(p)}</p>`).join("");
 

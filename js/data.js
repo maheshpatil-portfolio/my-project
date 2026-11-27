@@ -145,8 +145,9 @@ const SITE = {
    concept: true   → shows a "Concept project" badge + a note that the brand is fictional
    draft:   true   → hidden on the live site; preview with  index.html?preview
    inProgress: true → public, with an "In progress" badge
+   thumbAi: true    → the card cover is AI-generated (adds an "AI concept" tag)
    sections: each has heading, text (string or list of paragraphs), optional
-             list (bullets), images (path or { src, caption }), layout: "grid"
+             list (bullets), images (path or { src, caption, ai: "ChatGPT" }), layout: "grid"
              for 2 columns, and videos (YouTube / Vimeo links)
    -------------------------------------------------------------------------- */
 const CASE_STUDIES = [
@@ -159,6 +160,7 @@ const CASE_STUDIES = [
     summary: "A 360° launch for a modern Indian chai brand: identity, packaging, campaign, launch film and motion.",
     categories: ["graphic", "motion", "video"],
     thumb: "assets/images/concepts/chai-theory/process/logo-exploration-r1.webp",
+    thumbAi: true,
     hero: "",
     preview: "",   // optional 2–4 s muted mp4 loop (under 2 MB) that plays on hover over the card
     role: "Creative direction, brand identity, packaging, campaign, motion & video",
@@ -196,8 +198,8 @@ const CASE_STUDIES = [
         ],
         layout: "grid",
         images: [
-          { src: "assets/images/concepts/chai-theory/process/logo-exploration-r1.webp", caption: "Round 1 — quick vector studies of three routes, generated with AI assistance (Claude) as a starting point" },
-          { src: "assets/images/concepts/chai-theory/process/logo-ai-exploration-chatgpt.webp", caption: "AI ideation (ChatGPT), used for exploration only" },
+          { src: "assets/images/concepts/chai-theory/process/logo-exploration-r1.webp", ai: "Claude", caption: "Round 1 — quick vector studies of three routes, generated with AI assistance (Claude) as a starting point" },
+          { src: "assets/images/concepts/chai-theory/process/logo-ai-exploration-chatgpt.webp", ai: "ChatGPT", caption: "AI ideation (ChatGPT), used for exploration only" },
         ],
       },
       {
