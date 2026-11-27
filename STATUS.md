@@ -35,6 +35,15 @@ Owner picked Unsplash photos: jar candle with bokeh → "Scent of a memory"; sin
 "Scent of a memory" progress: 1080×1080 canvas ✔, photo placed + sides extended with Photoshop Generative Fill ✔ (credit: "Photo: Unsplash, background extended with Photoshop Generative Fill"), ring stain healed ✔, "Top shade" gradient layer (#1A0B1F → transparent, top to just above flame) in progress.
 Next: plum Solid Color #2A1430 Soft Light 30–40% → Curves (lift blacks) → flame glow → jar label (cream #F5EBDD, logo, "Saffron & Sandalwood · 200 g", Warp Arc −8, darken ~35%) → text (logo top, italic headline, subline, "Shop the Diwali Collection · link in bio") → petals → export 2160 px. When the stock versions arrive, replace the AI posts and drop the AI disclosure line.
 
+## Reference portfolio (owner shared, 2026-11-27)
+Owner shared pages from another designer's Behance portfolio as inspiration only (do not copy). Takeaways agreed:
+- Logo rationale page (logo + arrows explaining each decision) → make one for Kesar Lane (flame = Diwali/light, lotus leaves = ritual/care, serif = premium heritage, saffron = "kesar", plum = calm premium).
+- Brand board (logo, mockup, font, colours, pattern, packaging, logo versions) → Kesar Lane brand board.
+- Full branding mockups → Kesar Lane gift box, tag, bag, card, Instagram profile (no app/website mockups: not UI/UX).
+- Social posts in Instagram frames → show Kesar Lane posts this way.
+- Print in real-world mockups (standee, billboard, brochure) → Kiro One standee/dangler/billboard; Suryana annual-report spreads.
+- Skip: UI/UX, logo walls of 12+, lime-on-black style, long generic paragraphs.
+
 ## How work gets added
 - Owner generates AI images himself in ChatGPT (do NOT generate images with ElevenLabs or any tool unless he asks by name).
 - Every AI image gets `ai: "ChatGPT"` (section image) or `thumbAi: true` (card cover) → "AI concept" tag + honest caption.
