@@ -13,7 +13,7 @@ retail / in-store branding (Vivo, Coolpad, AGX: in-shop branding, signage, dangl
 | Order | Slug | Status | Brief (Claude Docs) |
 |---|---|---|---|
 | 1 | suryana-renewables | Public — 3 AI concept images | https://claude.ai/artifact/9qBnBS92EtFKshUNLwX7k9 |
-| 2 | kiro-one | Public — no images yet (360° launch: posters, in-store kit, social, motion video) | https://claude.ai/artifact/UNo42qy7CW5f2NtQycEC9j |
+| 2 | kiro-one | Public — 3 AI concept images (key visual = cover, showroom kit = hero, poster series) | https://claude.ai/artifact/UNo42qy7CW5f2NtQycEC9j |
 | 3 | kesar-lane | Public — no images yet (Diwali social, flyer/poster/dangler, motion reels) | https://claude.ai/artifact/Fc7qK6mQfh75MEdBh3DZfm |
 | – | chai-theory | Draft (hidden) — has logo exploration + 3 AI images | https://claude.ai/artifact/MgBFfKHp3wEAD3eAuhnDZj |
 | – | thoda | Draft (hidden) — has 3 AI images | https://claude.ai/artifact/LmpohDK2MnkpqqVnxzwcRN |
@@ -25,6 +25,7 @@ retail / in-store branding (Vivo, Coolpad, AGX: in-shop branding, signage, dangl
 - After every push: wait for the live site to match (`curl` js/data.js vs local), then check it in Playwright via the proxy.
 
 ## Decisions (newest first)
+- 2026-11-27 — Kiro One AI images added (key visual, showroom kit, poster series).
 - 2026-11-27 — Rule: STATUS.md is the handoff file; every session reads it first and updates it after each change.
 - 2026-11-27 — Focus on 3 case studies (Suryana, Kiro One, Kesar Lane) based on India job-market research; Chai Theory and Thoda hidden as drafts.
 - 2026-11-27 — Kiro One = 360° product launch (key visual, posters/flyers, in-store POSM kit, social, motion video). Kesar Lane adds flyer, poster, pop-up dangler. Suryana's film = "motion summary video".
@@ -33,8 +34,7 @@ retail / in-store branding (Vivo, Coolpad, AGX: in-shop branding, signage, dangl
 - 2026-11-27 — Old Behance work removed from the site; no NDA project; LinkedIn link added; portfolio link added to his LinkedIn.
 
 ## Next steps
-1. Kiro One images (prompts: product hero shot, city ride at blue hour, detail close-ups — or retail/standee mockups).
-2. Kesar Lane images (candle among diyas, gift-box flat lay, hands lighting a diya).
-3. Owner's own designs (slides, posters, in-store kit, motion videos) replace AI images over time; remove `inProgress` when a project is finished.
-4. Owner to update his CV PDF (still lists UI/UX + Figma) and send it to replace `assets/Mahesh-Patil-Resume.pdf`.
-5. Later: 60–90 s showreel from the three projects' motion pieces.
+1. Kesar Lane images (candle among diyas, gift-box flat lay, hands lighting a diya).
+2. Owner's own designs (slides, posters, in-store kit, motion videos) replace AI images over time; remove `inProgress` when a project is finished.
+3. Owner to update his CV PDF (still lists UI/UX + Figma) and send it to replace `assets/Mahesh-Patil-Resume.pdf`.
+4. Later: 60–90 s showreel from the three projects' motion pieces.

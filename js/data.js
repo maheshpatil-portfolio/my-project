@@ -216,7 +216,11 @@ const CASE_STUDIES = [
     inProgress: true,
     summary: "A 360° launch for an electric scooter: key visual, posters and flyers, an in-store branding kit, social posts and a motion launch video.",
     categories: ["graphic", "motion"],
-    thumb: "",
+    thumb: "assets/images/concepts/kiro-one/ai/key-visual.webp",
+    thumbPosition: "right center",
+    thumbAi: true,
+    hero: { src: "assets/images/concepts/kiro-one/ai/showroom-kit.webp", ai: "ChatGPT", alt: "Concept of a Kiro One showroom with standee, ceiling danglers, display platform and fascia signage",
+            caption: "In-store kit direction: standee, danglers, display platform and fascia — AI-generated concept (ChatGPT). Final artwork in progress by Mahesh Patil." },
     colors: ["#0B0F14", "#FF8A00"],
     preview: "",
     role: "Launch campaign, retail & in-store branding, print, social, motion graphics",
@@ -236,6 +240,20 @@ const CASE_STUDIES = [
       { heading: "The insight", text: [
         "In Indian cities, the commute is the part of the day you don't control. Kiro One gives it back: \"Own the city.\"",
       ] },
+      {
+        heading: "Visual direction",
+        text: [
+          "AI-generated concepts lock the launch look before the real artwork: one Mango Orange scooter, always facing forward, glowing against a dark, rain-wet night city — the same image on posters, in the showroom and on social.",
+          "Next, every piece is built by hand to print specs: A2 posters with real headlines and specs, a double-sided dangler, a 2×6 ft standee and shop signage.",
+        ],
+        layout: "grid",
+        images: [
+          { src: "assets/images/concepts/kiro-one/ai/key-visual.webp", ai: "ChatGPT", alt: "Mango-orange electric scooter on a wet night-city street",
+            caption: "Launch key visual direction — AI-generated (ChatGPT)." },
+          { src: "assets/images/concepts/kiro-one/ai/poster-series.webp", ai: "ChatGPT", alt: "Three poster layouts with the scooter and blank headline and spec areas",
+            caption: "Poster series layout direction: Range, Look, Speed — AI-generated (ChatGPT)." },
+        ],
+      },
       {
         heading: "Coming next",
         text: ["This case study is being built in public. Next up:"],
