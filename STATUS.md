@@ -44,6 +44,9 @@ Owner shared pages from another designer's Behance portfolio as inspiration only
 - Print in real-world mockups (standee, billboard, brochure) → Kiro One standee/dangler/billboard; Suryana annual-report spreads.
 - Skip: UI/UX, logo walls of 12+, lime-on-black style, long generic paragraphs.
 
+## Photoshop help brief
+Owner works on designs in another chat. Self-contained brief to paste there: `work/PHOTOSHOP-HELP-BRIEF.md` (brand specs, teaching style, to-do list).
+
 ## How work gets added
 - Owner generates AI images himself in ChatGPT (do NOT generate images with ElevenLabs or any tool unless he asks by name).
 - Every AI image gets `ai: "ChatGPT"` (section image) or `thumbAi: true` (card cover) → "AI concept" tag + honest caption.
